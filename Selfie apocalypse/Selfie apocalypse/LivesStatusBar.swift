@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LivesStatusBar: UIView {
+@IBDesignable class LivesStatusBar: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -36,8 +36,7 @@ class LivesStatusBar: UIView {
         let nib = UINib(nibName: "LivesStatusBar", bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         view.frame = bounds
-        view.sizeToFit()	
-        view.setNeedsUpdateConstraints()
+
         	self.addSubview(view);
     }
 

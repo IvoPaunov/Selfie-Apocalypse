@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GranadesStatusBar: UIView {
+@IBDesignable class GranadesStatusBar: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -34,9 +34,11 @@ class GranadesStatusBar: UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "GranadesStatusBar", bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
-        view.frame = bounds
-        view.sizeToFit()
-        view.setNeedsUpdateConstraints()
+//        view.frame = bounds
+//        view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+//        view.sizeToFit()
+//        view.setNeedsUpdateConstraints()	
         self.addSubview(view);
     }
 }
