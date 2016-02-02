@@ -1,5 +1,5 @@
 //
-//  LivesStatusBar.swift
+//  GranadesStatusBar.swift
 //  Selfie apocalypse
 //
 //  Created by Ivko on 2/2/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LivesStatusBar: UIView {
+class GranadesStatusBar: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -17,7 +17,6 @@ class LivesStatusBar: UIView {
         // Drawing code
     }
     */
-    
     
     var view:UIView!;
     
@@ -33,12 +32,11 @@ class LivesStatusBar: UIView {
     
     func loadViewFromNib() {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "LivesStatusBar", bundle: bundle)
+        let nib = UINib(nibName: "GranadesStatusBar", bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         view.frame = bounds
-        view.sizeToFit()	
+        view.sizeToFit()
         view.setNeedsUpdateConstraints()
-        	self.addSubview(view);
+        self.addSubview(view);
     }
-
 }

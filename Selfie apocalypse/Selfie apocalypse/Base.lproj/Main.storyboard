@@ -22,15 +22,15 @@
                                 <rect key="frame" x="20" y="28" width="135" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view userInteractionEnabled="NO" contentMode="right" placeholderIntrinsicWidth="135" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-2p-y7j" customClass="LivesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
-                                <rect key="frame" x="310" y="28" width="135" height="50"/>
+                            <view userInteractionEnabled="NO" contentMode="redraw" misplaced="YES" placeholderIntrinsicWidth="135" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-2p-y7j" customClass="GranadesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="354" y="28" width="90" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="cfE-zG-4Kk" secondAttribute="leading" id="Hwd-EQ-UtU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fcB-2p-y7j" secondAttribute="trailing" constant="135" id="IiC-9L-dXz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fcB-2p-y7j" secondAttribute="trailing" constant="90" id="IiC-9L-dXz"/>
                             <constraint firstItem="cfE-zG-4Kk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="LOg-Bz-4jk"/>
                             <constraint firstItem="fcB-2p-y7j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="bcW-dY-cxb"/>
                         </constraints>

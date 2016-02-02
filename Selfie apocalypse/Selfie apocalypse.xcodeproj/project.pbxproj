@@ -14,6 +14,8 @@
 		8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */; };
 		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
+		85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B631C6118080087E258 /* GranadesStatusBar.xib */; };
+		85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B661C61193A0087E258 /* GranadesStatusBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8545B4C01C609F25008F2624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
+		85791B631C6118080087E258 /* GranadesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GranadesStatusBar.xib; sourceTree = "<group>"; };
+		85791B661C61193A0087E258 /* GranadesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GranadesStatusBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,6 @@
 				8545B4BB1C609F25008F2624 /* Assets.xcassets */,
 				8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */,
 				8545B4C01C609F25008F2624 /* Info.plist */,
-				85791B5D1C61011D0087E258 /* LivesStatusBar.xib */,
-				85791B5F1C6101790087E258 /* LivesStatusBar.swift */,
 			);
 			path = "Selfie apocalypse";
 			sourceTree = "<group>";
@@ -74,8 +76,28 @@
 		8545B4C61C609FA4008F2624 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				85791B651C6118960087E258 /* GranadesStatusBar */,
+				85791B621C6117B30087E258 /* LivesStatusBar */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		85791B621C6117B30087E258 /* LivesStatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				85791B5D1C61011D0087E258 /* LivesStatusBar.xib */,
+				85791B5F1C6101790087E258 /* LivesStatusBar.swift */,
+			);
+			name = LivesStatusBar;
+			sourceTree = "<group>";
+		};
+		85791B651C6118960087E258 /* GranadesStatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				85791B631C6118080087E258 /* GranadesStatusBar.xib */,
+				85791B661C61193A0087E258 /* GranadesStatusBar.swift */,
+			);
+			name = GranadesStatusBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +161,7 @@
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
+				85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */,
 				85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */,
 				85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */,
 				8545B4B71C609F25008F2624 /* ViewController.swift in Sources */,
 				8545B4B51C609F25008F2624 /* AppDelegate.swift in Sources */,
