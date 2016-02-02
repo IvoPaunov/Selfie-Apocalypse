@@ -12,6 +12,8 @@
 		8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4B81C609F25008F2624 /* Main.storyboard */; };
 		8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BB1C609F25008F2624 /* Assets.xcassets */; };
 		8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */; };
+		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
+		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8545B4BB1C609F25008F2624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8545B4BE1C609F25008F2624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8545B4C01C609F25008F2624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
+		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		8545B4B31C609F25008F2624 /* Selfie apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				8545B4C61C609FA4008F2624 /* Views */,
 				8545B4B41C609F25008F2624 /* AppDelegate.swift */,
 				8545B4B61C609F25008F2624 /* ViewController.swift */,
 				8545B4B81C609F25008F2624 /* Main.storyboard */,
 				8545B4BB1C609F25008F2624 /* Assets.xcassets */,
 				8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */,
 				8545B4C01C609F25008F2624 /* Info.plist */,
+				85791B5D1C61011D0087E258 /* LivesStatusBar.xib */,
+				85791B5F1C6101790087E258 /* LivesStatusBar.swift */,
 			);
 			path = "Selfie apocalypse";
+			sourceTree = "<group>";
+		};
+		8545B4C61C609FA4008F2624 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,7 @@
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
+				85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */,
 				8545B4B71C609F25008F2624 /* ViewController.swift in Sources */,
 				8545B4B51C609F25008F2624 /* AppDelegate.swift in Sources */,
 			);
@@ -247,10 +263,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Selfie apocalypse/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivo-paounov.selfieapocalipse.Selfie-apocalypse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -258,10 +277,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Selfie apocalypse/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivo-paounov.selfieapocalipse.Selfie-apocalypse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -284,6 +305,7 @@
 				8545B4C51C609F25008F2624 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
