@@ -18,6 +18,8 @@ to be absorbed from their selfies or to fight and to be absorbed from their self
  - Throughout the game there are different variations of mutations of the selfies and each one can be killed only with specific weapon. This weapon is sown on the display. To use different weapons you should use different gestures. For example if the concrete selfie requires to be killed with bat you should swipe left or right and so on - these things will be  explained at the how to kill section of the app. Fortunately if you are surrounded by too many selfies and you can not kill them all there are 3 grenades in your pocket (and 20 dollars (to have)). In that moment your only move is to shake your phone and throw a grenade. This will kill all surrounding selfies and will give you 3 second of peace. And last but not least you have only one live (you are not a cat) but one selfie can not absorb you by itself it just can absorb about one third of you so you have 3 "hearts"
  
  - There will be a global ranglist with the last survivors
+ - 
+ - There will be some sound effects
  
 ## The app functionality
 
@@ -36,8 +38,8 @@ to be absorbed from their selfies or to fight and to be absorbed from their self
     - The true story (7) - the story of the future
 
 - Backend functionalities
-   - the top scores will be stored in parse.com. There also will be sent a logs for each user about his activity and eventually crashes. There will be sent only the best score for each user so on player can not have more than one sor at the global rank list
-   - The gestures that will be used are - swipe, fling, pinch long press, tap, double tap (more concrete in how to section anд sense)
+   - the top scores will be stored in parse.com. There also will be sent a logs for each user about his activity and eventually crashes. There will be sent only the best score for each user so on player can not have more than one score at the global rank list. In the localdb will be kep only players top result.
+   - The gestures that will be used are - swipe, fling, pinch long press, tap, double tap (more concrete in how to section and by sense)
 
 ### The storyboard
 
