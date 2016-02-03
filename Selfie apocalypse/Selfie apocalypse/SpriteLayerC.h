@@ -6,12 +6,9 @@
 //  Copyright © 2016 Ivo Paounov. All rights reserved.
 //
 
-
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
-
-
 
 @interface SpriteLayerC : CALayer {
     unsigned int sampleIndex;

@@ -92,7 +92,7 @@
         
         currentAnimation = anim;
         
-        [self addAnimation: anim forKey: nil];
+       // [self addAnimation: anim forKey: nil];
     }
     
     if (self != nil) {

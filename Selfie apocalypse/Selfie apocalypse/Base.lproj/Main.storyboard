@@ -28,6 +28,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-CO-ZNZ">
+                                <rect key="frame" x="76" y="223" width="104" height="30"/>
+                                <state key="normal" title="Throw granade"/>
+                                <connections>
+                                    <action selector="throwGranade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bI-I8-aXj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -37,6 +44,9 @@
                             <constraint firstItem="nA8-1P-Z3e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-15" id="wuA-Zu-eyW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="granades" destination="vDd-95-bEj" id="7dl-j9-rsL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
