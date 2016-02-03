@@ -16,6 +16,8 @@
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
 		85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B631C6118080087E258 /* GranadesStatusBar.xib */; };
 		85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B661C61193A0087E258 /* GranadesStatusBar.swift */; };
+		85791B6D1C61589D0087E258 /* bang-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85791B6C1C61589D0087E258 /* bang-sprite.png */; };
+		85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7D1A81C62314100B2BC82 /* SpriteLayerC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
 		85791B631C6118080087E258 /* GranadesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GranadesStatusBar.xib; sourceTree = "<group>"; };
 		85791B661C61193A0087E258 /* GranadesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GranadesStatusBar.swift; sourceTree = "<group>"; };
+		85791B6C1C61589D0087E258 /* bang-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bang-sprite.png"; sourceTree = "<group>"; };
+		85E7D1A71C62314100B2BC82 /* Selfie apocalypse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selfie apocalypse-Bridging-Header.h"; sourceTree = "<group>"; };
+		85E7D1A81C62314100B2BC82 /* SpriteLayerC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteLayerC.m; sourceTree = "<group>"; };
+		85E7D1AA1C62329A00B2BC82 /* SpriteLayerC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteLayerC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 		8545B4B31C609F25008F2624 /* Selfie apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				85752F9D1C62549100F38513 /* AnimationsHelpers */,
+				85752F9C1C62470D00F38513 /* SpritesAssets */,
 				8545B4C61C609FA4008F2624 /* Views */,
 				8545B4B41C609F25008F2624 /* AppDelegate.swift */,
 				8545B4B61C609F25008F2624 /* ViewController.swift */,
@@ -69,6 +77,7 @@
 				8545B4BB1C609F25008F2624 /* Assets.xcassets */,
 				8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */,
 				8545B4C01C609F25008F2624 /* Info.plist */,
+				85E7D1A71C62314100B2BC82 /* Selfie apocalypse-Bridging-Header.h */,
 			);
 			path = "Selfie apocalypse";
 			sourceTree = "<group>";
@@ -80,6 +89,23 @@
 				85791B621C6117B30087E258 /* LivesStatusBar */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		85752F9C1C62470D00F38513 /* SpritesAssets */ = {
+			isa = PBXGroup;
+			children = (
+				85791B6C1C61589D0087E258 /* bang-sprite.png */,
+			);
+			name = SpritesAssets;
+			sourceTree = "<group>";
+		};
+		85752F9D1C62549100F38513 /* AnimationsHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				85E7D1A81C62314100B2BC82 /* SpriteLayerC.m */,
+				85E7D1AA1C62329A00B2BC82 /* SpriteLayerC.h */,
+			);
+			name = AnimationsHelpers;
 			sourceTree = "<group>";
 		};
 		85791B621C6117B30087E258 /* LivesStatusBar */ = {
@@ -158,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85791B6D1C61589D0087E258 /* bang-sprite.png in Resources */,
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
@@ -176,6 +203,7 @@
 				85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */,
 				85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */,
 				8545B4B71C609F25008F2624 /* ViewController.swift in Sources */,
+				85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */,
 				8545B4B51C609F25008F2624 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +320,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivo-paounov.selfieapocalipse.Selfie-apocalypse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Selfie apocalypse/Selfie apocalypse-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -306,7 +334,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ivo-paounov.selfieapocalipse.Selfie-apocalypse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Selfie apocalypse/Selfie apocalypse-Bridging-Header.h";
 			};
 			name = Release;
 		};

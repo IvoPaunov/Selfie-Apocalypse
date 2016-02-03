@@ -18,6 +18,12 @@ import UIKit
     }
     */
     
+    @IBOutlet weak var thirdGranade: UIImageView!
+    
+    @IBOutlet weak var secondGranade: UIImageView!
+    
+    @IBOutlet weak var firstGranade: UIImageView!
+    
     var view:UIView!;
     
     override init(frame: CGRect) {
@@ -41,4 +47,5 @@ import UIKit
 //        view.setNeedsUpdateConstraints()	
         self.addSubview(view);
     }
-}
+    
+     }
