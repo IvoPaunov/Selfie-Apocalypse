@@ -12,6 +12,7 @@
 		8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4B81C609F25008F2624 /* Main.storyboard */; };
 		8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BB1C609F25008F2624 /* Assets.xcassets */; };
 		8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */; };
+		85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85752FD41C62A84C00F38513 /* hearts-sprite.png */; };
 		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
 		85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B631C6118080087E258 /* GranadesStatusBar.xib */; };
@@ -28,6 +29,7 @@
 		8545B4BB1C609F25008F2624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8545B4BE1C609F25008F2624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8545B4C01C609F25008F2624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85752FD41C62A84C00F38513 /* hearts-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-sprite.png"; sourceTree = "<group>"; };
 		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
 		85791B631C6118080087E258 /* GranadesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GranadesStatusBar.xib; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		85752F9C1C62470D00F38513 /* SpritesAssets */ = {
 			isa = PBXGroup;
 			children = (
+				85752FD41C62A84C00F38513 /* hearts-sprite.png */,
 				85791B6C1C61589D0087E258 /* bang-sprite.png */,
 			);
 			name = SpritesAssets;
@@ -186,6 +189,7 @@
 			files = (
 				85791B6D1C61589D0087E258 /* bang-sprite.png in Resources */,
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
+				85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */,
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
 				85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */,

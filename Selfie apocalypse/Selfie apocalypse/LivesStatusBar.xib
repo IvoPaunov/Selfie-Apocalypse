@@ -5,7 +5,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LivesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
+            <connections>
+                <outlet property="firstHeart" destination="FFW-ZT-hLo" id="ylX-wi-Yb7"/>
+                <outlet property="secondHeart" destination="Le8-8g-bkz" id="UD6-mn-SwD"/>
+                <outlet property="thirdHeart" destination="ehU-a5-A1h" id="oKz-MU-a4f"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" layoutMarginsFollowReadableWidth="YES" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
@@ -26,7 +32,7 @@
             </accessibility>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-            <point key="canvasLocation" x="523" y="936"/>
+            <point key="canvasLocation" x="700" y="580"/>
         </view>
     </objects>
     <resources>

@@ -13,10 +13,10 @@
 @synthesize sampleIndex;
 @synthesize currentAnimation;
 
-// redraw the layer only when the sampleIndex or the position properties change
+// redraw the layer only when the sampleIndex change
 + (BOOL) needsDisplayForKey: (NSString *) key
 {
-    return [key isEqualToString: @"sampleIndex"] || [key isEqualToString: @"position"];
+    return [key isEqualToString: @"sampleIndex"];
 }
 
 // avoid default actions for animated properties
@@ -25,7 +25,6 @@
     if ([aKey isEqualToString: @"contentsRect"] || [aKey isEqualToString: @"bounds"] || [aKey isEqualToString: @"position"]) {
         return (id<CAAction>)[NSNull null];
     }
-    
     
     return [super defaultActionForKey: aKey];
 }
@@ -54,8 +53,6 @@
 {
     return ((SpriteLayerC *) [self presentationLayer]).sampleIndex;
 }
-
-#pragma mark - Initialization with an image and a size
 
 + (id) layerWithImageAndAnimationSettings: (UIImage *) img
                                sampleSize: (CGSize) size
@@ -89,6 +86,7 @@
         anim.toValue = [NSNumber numberWithInt: endFrame];
         anim.duration = duration;
         anim.repeatCount = repeatCount;
+        //anim.autoreverses = false;
         
         currentAnimation = anim;
         
@@ -105,9 +103,7 @@
 }
 
 -(void) playAnimationAgain {
-    
     [self addAnimation: currentAnimation forKey: nil];
-    
 }
 
 

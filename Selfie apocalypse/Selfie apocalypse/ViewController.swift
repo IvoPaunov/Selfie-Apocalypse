@@ -13,15 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-         throwGranade()
+        throwGranade()
         
     }
     @IBOutlet weak var granades: GranadesStatusBar!
     
+    @IBOutlet weak var hearts: LivesStatusBar!
     
     @IBAction func throwGranade(sender: AnyObject) {
         
-          self.granades.throwGranade()
+        self.granades.throwGranade()
+        self.hearts.takeHeart()
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,20 +78,20 @@ class ViewController: UIViewController {
         //
         //        layer.frame = CGRect(x: 200, y: 200, width: 50, height:50)
         
-      //  self.granades.throwGranade()
+        //  self.granades.throwGranade()
         
         //        let handle = setTimeout(2, block: { () -> Void in
         //           //layer.playAnimationAgain()
         //
         //
         //            self.granades.throwGranade()
-        //          
+        //
         //        })
         
-//        
-//        let layer = CALayer()
-//        
-//        layer.re
+        //
+        //        let layer = CALayer()
+        //
+        //        layer.re
     }
     
     func setTimeout(delay:NSTimeInterval, block:()->Void) -> NSTimer {

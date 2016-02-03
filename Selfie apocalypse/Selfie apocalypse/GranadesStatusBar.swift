@@ -85,8 +85,6 @@ import UIKit
         self.bombSpriteLayer?.removeAllAnimations()
         
         self.bombSpriteLayer?.playAnimationAgain()
-        
-        //var test = self.bombSpriteLayer
     }
     
     private func fadeGranade(imageToFade: UIImageView){
