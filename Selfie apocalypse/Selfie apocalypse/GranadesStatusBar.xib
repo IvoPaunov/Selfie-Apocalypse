@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-ae-Qkj">
+                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-ae-Qkj">
                     <rect key="frame" x="70" y="0.0" width="20" height="30"/>
                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                 </imageView>
@@ -36,9 +36,6 @@
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="O3M-ae-Qkj" secondAttribute="trailing" id="yw2-3n-zDo"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             <point key="canvasLocation" x="594" y="480"/>

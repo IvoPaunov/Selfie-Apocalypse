@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import GLKit
 
 class ViewController: UIViewController {
+    
+    var currentSelfieZindex = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        throwGranade()
-        
     }
+    
     @IBOutlet weak var granades: GranadesStatusBar!
     
     @IBOutlet weak var hearts: LivesStatusBar!
@@ -23,7 +25,8 @@ class ViewController: UIViewController {
     @IBAction func throwGranade(sender: AnyObject) {
         
         self.granades.throwGranade()
-        self.hearts.takeHeart()
+        //self.hearts.takeHeart()
+         drawSelfie()
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,67 +34,38 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func throwGranade() {
-        // let layer = SpriteLayerC()
-        //
-        //        let sprite = UIImage(named: "bang-sprite.png")//?.CGImage!
+    func  drawSelfie(){
         
-        //layer.contents =  sprite
+        let selfie = Selfie()
+        let frame = CGRectMake(100, 100, 50, 50)
+        selfie.frame = frame
+        selfie.backgroundColor = UIColor.clearColor()
+        selfie.layer.zPosition = CGFloat(currentSelfieZindex)
+//        selfie.layer.cornerRadius = selfie.bounds.size.width / 2
+//        selfie.layer.masksToBounds = true
+        currentSelfieZindex--
+        self.view.addSubview(selfie)
         
-        //        let size  = CGSizeMake(100, 100)
-        //
-        //
-        //        let layer = SpriteLayerC.init(
-        //            andAnimationSettings: sprite,
-        //            sampleSize: size,
-        //            animationFrameStart: 1,
-        //            animationFrameEnd: 82,
-        //            animationDuration: 1,
-        //            lanimationRepeatCount: 1)
+        animateSelfie(selfie)
+    }
+    
+    func animateSelfie(selfieToAnimate: UIView){
         
-        //        let normaizedWidth: CGFloat = CGFloat(size.width) /   CGFloat(CGImageGetWidth(sprite))
-        //        let normalizedHeight: CGFloat = CGFloat(size.height) /  CGFloat(CGImageGetHeight(sprite))
-        //
-        //        let normalizedSize = CGSizeMake(normaizedWidth, normalizedHeight)
-        //
-        //        layer.bounds = CGRect(x: 0,y: 0, width: 50 , height: 50 )
-        //        layer.contentsRect = CGRectMake(0, 0, normalizedSize.width , normalizedSize.height )
-        //
-        //        let animation = CABasicAnimation.init(keyPath: "sampleIndex")
-        //
-        //        print(animation)
-        //
-        //        animation.fromValue = 1
-        //        animation.toValue = 82
-        //        animation.duration = 3
-        //        animation.repeatCount = 2
-        //
-        //        print(animation.fromValue)
-        //
-        //        print(animation.keyPath)
-        //
-        // self.view.layer.addSublayer(layer)
-        //
-        //        layer.addAnimation(animation, forKey: nil)
-        //
-        //        layer.contentsScale = 20
-        //
-        //        layer.frame = CGRect(x: 200, y: 200, width: 50, height:50)
+        GLKView.animateWithDuration(5,
+            animations: {
+                selfieToAnimate.transform = CGAffineTransformMakeScale(5, 5)
+                selfieToAnimate.layer.position.y = 400
+                selfieToAnimate.layer.position.x = 400
+            },
+            completion: { finish in
+                
+                UIView.animateWithDuration(0.6){
+                    selfieToAnimate.transform = CGAffineTransformIdentity
+                    selfieToAnimate.removeFromSuperview()
+                      self.hearts.takeHeart()
+                }
+        })
         
-        //  self.granades.throwGranade()
-        
-        //        let handle = setTimeout(2, block: { () -> Void in
-        //           //layer.playAnimationAgain()
-        //
-        //
-        //            self.granades.throwGranade()
-        //
-        //        })
-        
-        //
-        //        let layer = CALayer()
-        //
-        //        layer.re
     }
     
     func setTimeout(delay:NSTimeInterval, block:()->Void) -> NSTimer {

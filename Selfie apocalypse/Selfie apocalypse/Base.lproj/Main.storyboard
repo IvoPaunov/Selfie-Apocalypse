@@ -36,12 +36,12 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="vDd-95-bEj" secondAttribute="trailing" constant="-15" id="Fms-UJ-fR7"/>
-                            <constraint firstItem="vDd-95-bEj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-15" id="GEs-pB-Pbi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vDd-95-bEj" secondAttribute="trailing" constant="75" id="Fms-UJ-fR7"/>
+                            <constraint firstItem="vDd-95-bEj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GEs-pB-Pbi"/>
                             <constraint firstItem="nA8-1P-Z3e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="S9A-R3-Ts5"/>
-                            <constraint firstItem="nA8-1P-Z3e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-15" id="wuA-Zu-eyW"/>
+                            <constraint firstItem="nA8-1P-Z3e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wuA-Zu-eyW"/>
                         </constraints>
                     </view>
                     <connections>
