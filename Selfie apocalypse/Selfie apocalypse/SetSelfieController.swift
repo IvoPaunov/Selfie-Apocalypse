@@ -22,11 +22,13 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
 
         imagePicker.delegate = self
         
-        let path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)!
+        let path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)
         
-        let headImage = UIImage(contentsOfFile: path)
-        
-        inageView.image = headImage
+        if(path != nil){
+            let headImage = UIImage(contentsOfFile: path!)
+            
+            inageView.image = headImage
+        }
     }
 
     override func didReceiveMemoryWarning() {
