@@ -30,33 +30,37 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8a-71-JBB">
-                                <rect key="frame" x="240" y="28" width="120" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDd-95-bEj" customClass="GranadesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="504" y="5" width="90" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bat" translatesAutoresizingMaskIntoConstraints="NO" id="3oq-az-7KF">
+                                <rect key="frame" x="6" y="43" width="90" height="90"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8a-71-JBB">
+                                <rect key="frame" x="240" y="28" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vDd-95-bEj" secondAttribute="trailing" constant="75" id="Fms-UJ-fR7"/>
-                            <constraint firstItem="vDd-95-bEj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GEs-pB-Pbi"/>
+                            <constraint firstItem="vDd-95-bEj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="GEs-pB-Pbi"/>
                             <constraint firstItem="J8a-71-JBB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RS6-qV-sQh"/>
                             <constraint firstItem="nA8-1P-Z3e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="S9A-R3-Ts5"/>
                             <constraint firstItem="J8a-71-JBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="uOK-dQ-HRE"/>
-                            <constraint firstItem="nA8-1P-Z3e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wuA-Zu-eyW"/>
+                            <constraint firstItem="nA8-1P-Z3e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="wuA-Zu-eyW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="granades" destination="vDd-95-bEj" id="7dl-j9-rsL"/>
                         <outlet property="hearts" destination="nA8-1P-Z3e" id="yYG-QN-hrS"/>
                         <outlet property="selfiesKilledLabel" destination="J8a-71-JBB" id="bSf-Iv-4ga"/>
+                        <outlet property="weaponForLastSelfieImageView" destination="3oq-az-7KF" id="Vqh-zW-aN0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,7 +82,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faY-Bq-4K9">
                                 <rect key="frame" x="91" y="6" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -90,4 +94,7 @@
             <point key="canvasLocation" x="689" y="1191"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bat" width="120" height="120"/>
+    </resources>
 </document>

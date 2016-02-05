@@ -7,18 +7,24 @@
 //
 
 import UIKit
-//import GLKit
 
 import Foundation
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
+    var utils = Utils()
     
     var touchedSelfie: Selfie?
     
-    var currentSelfieZindex = 1000
+    var currentSelfieZindex = HUGE
     var selfiesKilledCount = 0
     var absorbtionsTillDeath = 3
+    var granadesLeft = 3
+    var currentSelfiesWaveSpeed = 15
+    var currentSelfieReproductionInterval: Float = 3
     var selfies = Set<Selfie>()
+    var loopHandler: NSTimer?
+    
+    @IBOutlet weak var weaponForLastSelfieImageView: UIImageView!
     
     @IBOutlet weak var selfiesKilledLabel: UILabel!
     
@@ -31,6 +37,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.setupGestures()
+        self.gameLoop()
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,21 +46,29 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func setupGestures(){
-        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action:Selector("handleDoubleTap:"))
+        let doubleTapRecognizer = UITapGestureRecognizer(
+            target: self,
+            action:Selector("handleDoubleTap:"))
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapRecognizer.delegate = self
         self.view.addGestureRecognizer(doubleTapRecognizer)
         
-        let longRecognizer = UILongPressGestureRecognizer(target: self, action:Selector("handleLongPress:"))
+        let longRecognizer = UILongPressGestureRecognizer(
+            target: self,
+            action:Selector("handleLongPress:"))
         longRecognizer.delegate = self
         self.view.addGestureRecognizer(longRecognizer)
         
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action:Selector("handleSwipe:"))
+        let swipeRecognizer = UISwipeGestureRecognizer(
+            target: self,
+            action:Selector("handleSwipe:"))
         swipeRecognizer.direction = [UISwipeGestureRecognizerDirection.Left,  UISwipeGestureRecognizerDirection.Right]
         swipeRecognizer.delegate = self
         self.view.addGestureRecognizer(swipeRecognizer)
         
-        let pinchRecognizer = UIPinchGestureRecognizer(target: self, action:Selector("handlePinch:"))
+        let pinchRecognizer = UIPinchGestureRecognizer(
+            target: self,
+            action:Selector("handlePinch:"))
         pinchRecognizer.delegate = self
         self.view.addGestureRecognizer(pinchRecognizer)
     }
@@ -64,9 +79,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let afectedFelfie = self.getTouchedSelfie(touchPosition)
         
-        if(afectedFelfie != nil){
+        if(afectedFelfie != nil && afectedFelfie?.selfieType == SelfieTipe.Pike_Susceptible){
             
-            self.killSelfie(afectedFelfie!)
+            self.slaySelfie(afectedFelfie!)
         }
         
         print("tap")
@@ -81,9 +96,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             let touchPosition = recognizer.locationInView(self.view)
             let afectedFelfie = self.getTouchedSelfie(touchPosition)
             
-            if(afectedFelfie != nil){
+            if(afectedFelfie != nil && afectedFelfie?.selfieType == SelfieTipe.Nunchaku_Susceptible){
                 
-                self.killSelfie(afectedFelfie!)
+                self.slaySelfie(afectedFelfie!)
             }
         }
         
@@ -95,9 +110,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let afectedFelfie = self.getTouchedSelfie(touchPosition)
         
-        if(afectedFelfie != nil){
+        if(afectedFelfie != nil && afectedFelfie?.selfieType == SelfieTipe.Bat_Susceptible){
             
-            self.killSelfie(afectedFelfie!)
+            self.slaySelfie(afectedFelfie!)
         }
         
         print("swipe")
@@ -108,16 +123,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let afectedFelfie = self.getTouchedSelfie(touchPosition)
         
-        if(afectedFelfie != nil){
+        if(afectedFelfie != nil && afectedFelfie?.selfieType == SelfieTipe.Axe_Susceptible){
             
-            self.killSelfie(afectedFelfie!)
+            self.slaySelfie(afectedFelfie!)
         }
         
         print("long")
     }
     
     @IBAction func throwGranade(sender: AnyObject) {
-        
         
         //self.hearts.takeHeart()
         drawSelfie()
@@ -135,19 +149,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         selfie.layer.zPosition = CGFloat(currentSelfieZindex)
         selfie.alpha = 0
         selfie.userInteractionEnabled = true
-        //        selfie.layer.cornerRadius = selfie.bounds.size.width / 2
-        //        selfie.layer.masksToBounds = true
-        currentSelfieZindex--
-        
-        
-        //                let tapRecognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
-        //                tapRecognizer.delegate = self
-        //                selfie.addGestureRecognizer(tapRecognizer)
-        
-        selfies.insert(selfie)
-        self.view.addSubview(selfie)
-        
-        animateSelfie(selfie)
+        --self.currentSelfieZindex
+        self.selfies.insert(selfie)
+        self.view.addSubview(selfie)    
+        self.animateSelfie(selfie)
+        self.changeWeaponImage(selfie)
     }
     
     func animateSelfie(selfieToAnimate: Selfie){
@@ -164,7 +170,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             completion: { finish in
                 
                 UIView.animateWithDuration(15,
-                    delay: 0.5,
+                    delay: 0,
                     options: [UIViewAnimationOptions.AllowUserInteraction,
                         UIViewAnimationOptions.AllowAnimatedContent],
                     animations: {
@@ -186,56 +192,67 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         for selfie in self.selfies{
             // print("x: \(selfie.frame.origin.x), y:\(selfie.frame.origin.y))")
             
-            if CGRectContainsPoint(selfie.layer.presentationLayer()!.frame	, pointOfTouch){
+            if (selfie.layer.presentationLayer() != nil) {
                 
-                touchedSelfie = selfie
-                
-                return selfie
-                //  selfie.removeFromSuperview()
-                //  self.selfies.remove(selfie)
+                if CGRectContainsPoint(selfie.layer.presentationLayer()!.frame	, pointOfTouch){
+                    
+                    touchedSelfie = selfie
+                    
+                    return selfie
+                    //  selfie.removeFromSuperview()
+                    //  self.selfies.remove(selfie)
+                }
             }
         }
         
         return nil
     }
     
-    func killSelfie(selfieToKill: Selfie){
+    func slaySelfie(selfieToSlay: Selfie){
         
-        self.animateSelfieDeath(selfieToKill)
-        selfieToKill.removeFromSuperview()
-        self.selfies.remove(selfieToKill)
+        let isAnimationOk = self.animateSelfieDeath(selfieToSlay)
+        
+        if isAnimationOk {
+        selfieToSlay.removeFromSuperview()
+        self.selfies.remove(selfieToSlay)
         ++self.selfiesKilledCount
         self.selfiesKilledLabel.text = String(self.selfiesKilledCount)
+        }
     }
     
-    func animateSelfieDeath(selfieToAnimate: Selfie){
+    func animateSelfieDeath(selfieToAnimate: Selfie) -> Bool{
         
-        let sprite = UIImage(named: "bang-sprite.png")
-        let size = CGSize(width: 100, height: 100)
+        let sprite = UIImage(named: "selfie-bang-sprite.png")
+        let size = CGSize(width: 128, height: 128)
         
         let bombSpriteLayer = SpriteLayerC.init(
             imageAndAnimationSettings: sprite,
             sampleSize: size,
             animationFrameStart: 1,
-            animationFrameEnd: 82,
+            animationFrameEnd: 33,
             animationDuration: 2,
             lanimationRepeatCount: 0)
         
-        let currentSelfieSize = selfieToAnimate.layer.presentationLayer()!.frame.size
-        let currentSelfiePosition = selfieToAnimate.layer.presentationLayer()!.position
-  
+        if  selfieToAnimate.layer.presentationLayer() != nil{
+            let currentSelfieSize = selfieToAnimate.layer.presentationLayer()!.frame.size
+            let currentSelfiePosition = selfieToAnimate.layer.presentationLayer()!.position
+            
+            bombSpriteLayer.frame = CGRect(
+                x: currentSelfiePosition.x - (currentSelfieSize.width / 2),
+                y: currentSelfiePosition.y - (currentSelfieSize.height / 2),
+                width: currentSelfieSize.width,
+                height:currentSelfieSize.height)
+            
+            bombSpriteLayer.zPosition = selfieToAnimate.layer.zPosition
+            
+            self.view.layer.addSublayer(bombSpriteLayer!)
+            
+            bombSpriteLayer.playAnimationAgain()
+            
+            return true
+        }
         
-        bombSpriteLayer.frame = CGRect(
-            x: currentSelfiePosition.x - (currentSelfieSize.width / 2),
-            y: currentSelfiePosition.y - (currentSelfieSize.height / 2),
-            width: currentSelfieSize.width,
-            height:currentSelfieSize.height)
-        
-        bombSpriteLayer.zPosition = selfieToAnimate.layer.zPosition
-        
-        self.view.layer.addSublayer(bombSpriteLayer!)
-        
-        bombSpriteLayer.playAnimationAgain()
+        return false
     }
     
     func absorbHeart(absorbBySelfie: Selfie){
@@ -247,30 +264,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        let touch = touches.first
-//        
-//        let firstTouch: CGPoint = touch!.locationInView(self.view!)
-//        
-//        // let selfiesCount = self.selfies.count
-//        
-//        for selfie in self.selfies{
-//            print("x: \(selfie.frame.origin.x), y:\(selfie.frame.origin.y))")
-//            
-//            if CGRectContainsPoint(selfie.layer.presentationLayer()!.frame	, firstTouch){
-//                
-//                touchedSelfie = selfie
-//                
-//                //  selfie.removeFromSuperview()
-//                //  self.selfies.remove(selfie)
-//                
-//            }
-//        }
-//        
-//        print("began")
-//        
-//        super.touchesBegan(touches, withEvent: event)
-//    }
+    func gameLoop(){
+        self.loopHandler = self.utils.setInterval(
+            NSTimeInterval(self.currentSelfieReproductionInterval),
+            block: { () -> Void in
+                
+                self.drawSelfie()
+                
+                if(self.selfiesKilledCount > 0 && self.selfiesKilledCount % 5 == 0){
+                    self.loopHandler?.invalidate()
+                    
+                    if( self.currentSelfieReproductionInterval > 0.5){
+                        
+                        self.currentSelfieReproductionInterval -= 0.1
+                        
+                    }
+                    
+                    self.gameLoop()
+                }
+        })
+    }
     
     // Detects device shake
     override func canBecomeFirstResponder() -> Bool {
@@ -287,22 +300,44 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     func throwSomeGranage(){
         self.granades.throwGranade()
         
-        for selfie in self.selfies{
-            self.killSelfie(selfie)
+        if self.granadesLeft > 0 {
+            for selfie in self.selfies{
+                self.slaySelfie(selfie)
+            }
+            
+            --self.granadesLeft
         }
     }
     
+    func changeWeaponImage(selfie: Selfie){
+        
+        let color: UIColor
+        let image: UIImage
+        
+        switch selfie.selfieType!{
+        case SelfieTipe.Pike_Susceptible:
+            color = UIColor.yellowColor()
+            image = UIImage(named: SelfieTipe.Pike_Susceptible.rawValue)!
+        case SelfieTipe.Bat_Susceptible:
+            color = UIColor.brownColor()
+               image = UIImage(named: SelfieTipe.Bat_Susceptible.rawValue)!
+        case SelfieTipe.Axe_Susceptible:
+            color = UIColor.blackColor()
+               image = UIImage(named: SelfieTipe.Axe_Susceptible.rawValue)!
+        case SelfieTipe.Nunchaku_Susceptible:
+            color = UIColor.grayColor()
+               image = UIImage(named: SelfieTipe.Nunchaku_Susceptible.rawValue)!
+        }
+        
+        self.weaponForLastSelfieImageView.image = image
+        self.weaponForLastSelfieImageView.layer.borderWidth = 5
+        self.weaponForLastSelfieImageView.layer.borderColor = color.CGColor
+        
+    }
     
     //    func gestureRecognizer(_: UIGestureRecognizer,
     //        shouldRecognizeSimultaneouslyWithGestureRecognizer:UIGestureRecognizer) -> Bool {
     //            return true
     //    }
-    
-    
-    
-    // TODO: make it global function
-    func setTimeout(delay:NSTimeInterval, block:()->Void) -> NSTimer {
-        return NSTimer.scheduledTimerWithTimeInterval(delay, target: NSBlockOperation(block: block), selector: "main", userInfo: nil, repeats: false)
-    }
 }
 
