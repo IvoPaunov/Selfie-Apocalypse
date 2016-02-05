@@ -25,7 +25,7 @@
                         animationDuration: (float) duration
                     lanimationRepeatCount: (float) repeatCount;
 
-- (id) initWithAndAnimationSettings: (UIImage *) img
+- (id) initWithImageAndAnimationSettings: (UIImage *) img
                          sampleSize: (CGSize) size
                 animationFrameStart: (int) startFrame
                   animationFrameEnd: (int) endFrame

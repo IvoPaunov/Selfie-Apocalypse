@@ -61,7 +61,7 @@
                         animationDuration: (float) duration
                             lanimationRepeatCount:(float) repeatCount
 {
-    return [[SpriteLayerC alloc] initWithAndAnimationSettings: img
+    return [[SpriteLayerC alloc] initWithImageAndAnimationSettings: img
                                                    sampleSize: size
                                           animationFrameStart:startFrame
                                             animationFrameEnd:endFrame
@@ -69,7 +69,7 @@
                                         lanimationRepeatCount:repeatCount];
 }
 
-- (id) initWithAndAnimationSettings: (UIImage *) img
+- (id) initWithImageAndAnimationSettings: (UIImage *) img
                          sampleSize: (CGSize) size
                 animationFrameStart: (int) startFrame
                   animationFrameEnd: (int) endFrame

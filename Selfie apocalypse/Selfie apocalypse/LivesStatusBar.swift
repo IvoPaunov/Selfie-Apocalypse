@@ -100,7 +100,7 @@ import UIKit
         let size = CGSize(width: 128, height: 128)
         
         self.heartsSpriteLayer = SpriteLayerC.init(
-            andAnimationSettings: sprite,
+            imageAndAnimationSettings: sprite,
             sampleSize: size,
             animationFrameStart: 1,
             animationFrameEnd: 51,

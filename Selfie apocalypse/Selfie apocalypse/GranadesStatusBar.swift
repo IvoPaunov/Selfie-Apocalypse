@@ -101,7 +101,7 @@ import UIKit
         let size = CGSize(width: 100, height: 100)
         
         self.bombSpriteLayer = SpriteLayerC.init(
-            andAnimationSettings: sprite,
+            imageAndAnimationSettings: sprite,
             sampleSize: size,
             animationFrameStart: 1,
             animationFrameEnd: 82,
