@@ -110,4 +110,8 @@ import UIKit
         
         self.layer.addSublayer(self.bombSpriteLayer!)
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.removeFromSuperview()
+    }
 }
