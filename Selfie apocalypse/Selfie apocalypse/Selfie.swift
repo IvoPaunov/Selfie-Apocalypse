@@ -38,11 +38,15 @@ class Selfie: UIView {
     // var tap: UITapGestureRecognizer?
     
     var selfieType: SelfieTipe?
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func drawRect(rect: CGRect) {
         
-        let headImage = UIImage(named: "Selfie")
+        //let headImage = UIImage(named: "Selfie")
         
+        let path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)!
+        
+        let headImage = UIImage(contentsOfFile: path)
         
         let selfieHead = UIImageView(
             frame: CGRectMake(
