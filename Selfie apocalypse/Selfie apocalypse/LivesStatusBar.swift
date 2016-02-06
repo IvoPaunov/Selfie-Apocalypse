@@ -45,7 +45,7 @@ import UIKit
         let nib = UINib(nibName: "LivesStatusBar", bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         view.frame = bounds
-        
+                
         self.addSubview(view);
     }
     

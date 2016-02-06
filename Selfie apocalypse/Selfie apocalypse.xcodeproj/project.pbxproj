@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8545B4B51C609F25008F2624 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545B4B41C609F25008F2624 /* AppDelegate.swift */; };
-		8545B4B71C609F25008F2624 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545B4B61C609F25008F2624 /* ViewController.swift */; };
+		8545B4B71C609F25008F2624 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8545B4B61C609F25008F2624 /* GameController.swift */; };
 		8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4B81C609F25008F2624 /* Main.storyboard */; };
 		8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BB1C609F25008F2624 /* Assets.xcassets */; };
 		8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */; };
@@ -23,13 +23,15 @@
 		85913CCD1C638CA00001F8F1 /* Selfie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85913CCC1C638CA00001F8F1 /* Selfie.swift */; };
 		85C579CE1C64DA6800C7002A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C579CD1C64DA6800C7002A /* Utils.swift */; };
 		85C579D01C64EE0500C7002A /* selfie-bang-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C579CF1C64EE0500C7002A /* selfie-bang-sprite.png */; };
+		85D1B29C1C6619A0005DC10B /* SupremeSelfieSlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1B29B1C6619A0005DC10B /* SupremeSelfieSlayersController.swift */; };
+		85D1B29E1C6619BD005DC10B /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1B29D1C6619BD005DC10B /* GameOverController.swift */; };
 		85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7D1A81C62314100B2BC82 /* SpriteLayerC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8545B4B11C609F25008F2624 /* Selfie apocalypse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selfie apocalypse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8545B4B41C609F25008F2624 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8545B4B61C609F25008F2624 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8545B4B61C609F25008F2624 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		8545B4B91C609F25008F2624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8545B4BB1C609F25008F2624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8545B4BE1C609F25008F2624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		85913CCC1C638CA00001F8F1 /* Selfie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selfie.swift; sourceTree = "<group>"; };
 		85C579CD1C64DA6800C7002A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		85C579CF1C64EE0500C7002A /* selfie-bang-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-bang-sprite.png"; sourceTree = "<group>"; };
+		85D1B29B1C6619A0005DC10B /* SupremeSelfieSlayersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupremeSelfieSlayersController.swift; sourceTree = "<group>"; };
+		85D1B29D1C6619BD005DC10B /* GameOverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 		85E7D1A71C62314100B2BC82 /* Selfie apocalypse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selfie apocalypse-Bridging-Header.h"; sourceTree = "<group>"; };
 		85E7D1A81C62314100B2BC82 /* SpriteLayerC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteLayerC.m; sourceTree = "<group>"; };
 		85E7D1AA1C62329A00B2BC82 /* SpriteLayerC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteLayerC.h; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		8545B4B31C609F25008F2624 /* Selfie apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				85D1B2981C661819005DC10B /* Controllers */,
 				856496301C65426E002A3DFC /* Common */,
 				85C579CC1C64DA2700C7002A /* Helpers */,
 				85913CCE1C63A5C80001F8F1 /* Extensions */,
@@ -87,13 +92,11 @@
 				85752F9C1C62470D00F38513 /* SpritesAssets */,
 				8545B4C61C609FA4008F2624 /* Views */,
 				8545B4B41C609F25008F2624 /* AppDelegate.swift */,
-				8545B4B61C609F25008F2624 /* ViewController.swift */,
 				8545B4B81C609F25008F2624 /* Main.storyboard */,
 				8545B4BB1C609F25008F2624 /* Assets.xcassets */,
 				8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */,
 				8545B4C01C609F25008F2624 /* Info.plist */,
 				85E7D1A71C62314100B2BC82 /* Selfie apocalypse-Bridging-Header.h */,
-				8564962E1C653FB4002A3DFC /* SetSelfieController.swift */,
 			);
 			path = "Selfie apocalypse";
 			sourceTree = "<group>";
@@ -176,6 +179,17 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		85D1B2981C661819005DC10B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8545B4B61C609F25008F2624 /* GameController.swift */,
+				8564962E1C653FB4002A3DFC /* SetSelfieController.swift */,
+				85D1B29B1C6619A0005DC10B /* SupremeSelfieSlayersController.swift */,
+				85D1B29D1C6619BD005DC10B /* GameOverController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,8 +268,10 @@
 			files = (
 				85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */,
 				85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */,
-				8545B4B71C609F25008F2624 /* ViewController.swift in Sources */,
+				85D1B29E1C6619BD005DC10B /* GameOverController.swift in Sources */,
+				8545B4B71C609F25008F2624 /* GameController.swift in Sources */,
 				85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */,
+				85D1B29C1C6619A0005DC10B /* SupremeSelfieSlayersController.swift in Sources */,
 				8564962F1C653FB4002A3DFC /* SetSelfieController.swift in Sources */,
 				856496321C65429F002A3DFC /* DefaultKeys.swift in Sources */,
 				8545B4B51C609F25008F2624 /* AppDelegate.swift in Sources */,

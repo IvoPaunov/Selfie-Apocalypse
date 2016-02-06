@@ -57,7 +57,6 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         }
     }
     
-    
     func imagePickerController(
         picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -74,6 +73,8 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         let data = UIImagePNGRepresentation(resizedImage)
         
         let writeOK =  data!.writeToFile(imagePath, atomically: true)
+            
+        // TODO: Add some error handling if write is not OK!
             
         let takenFeomPathImage = UIImage(contentsOfFile: imagePath)
         
@@ -92,7 +93,7 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
     
     func missingCameraMessage(){
         let alertVC = UIAlertController(
-            title: "No Camera",
+            title: "No Selfie Camera",
             message: "Ooops, you device has no selfie camera. Choose from library, wisely!",
             preferredStyle: .Alert)
         

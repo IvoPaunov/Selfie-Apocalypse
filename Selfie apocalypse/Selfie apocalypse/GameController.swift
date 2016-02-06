@@ -10,10 +10,8 @@ import UIKit
 
 import Foundation
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
-    var utils = Utils()
-    
-    var touchedSelfie: Selfie?
+class GameController: UIViewController, UIGestureRecognizerDelegate {
+    var utils = Utils()  
     
     var currentSelfieZindex = HUGE
     var selfiesKilledCount = 0
@@ -36,6 +34,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         self.setupGestures()
         // TODO: Add countdown
+        self.setBackgroundImage()
         self.loopHandler?.invalidate()
         self.loopHandler = nil
         self.gameLoop()
@@ -201,7 +200,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                     },
                     completion: { finish in
                         
+                        if self.absorbtionsTillDeath  >= 0{
+                        
                         self.absorbHeart(selfieToAnimate)
+                        }
                 })
         })
     }
@@ -271,9 +273,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func absorbHeart(absorbBySelfie: Selfie){
+        
+        
+        
         if(self.selfies.contains(absorbBySelfie as Selfie)){
             self.hearts.takeHeart()
-            --self.absorbtionsTillDeath
+            --self.absorbtionsTillDeath            
+            
+            if(self.absorbtionsTillDeath == 0){
+                
+                self.absorbtionsTillDeath--
+                self.loopHandler?.invalidate()
+                self.loopHandler = nil
+                
+                self.handleGameOver()
+            }
             
             // TODO: remove selfie and make some signal about that (sound  and animation)
         }
@@ -349,6 +363,36 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.weaponForLastSelfieImageView.layer.borderWidth = 5
         self.weaponForLastSelfieImageView.layer.borderColor = color.CGColor
         
+    }
+    
+    func setBackgroundImage(){
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "Background")?.drawInRect(self.view.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
+       
+    }
+    
+    func handleGameOver(){
+        
+//        self.loopHandler?.invalidate()
+//        self.loopHandler = nil
+//        for selfie in self.selfies{
+//            self.slaySelfie(selfie)
+//        }
+//        
+        self.view.layer.removeAllAnimations()
+        let gameOverController = self.storyboard?
+            .instantiateViewControllerWithIdentifier("GameOverController") as? GameOverController
+        gameOverController?.score = self.selfiesKilledCount
+        
+        gameOverController?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.presentViewController(gameOverController!, animated: true, completion: nil)
     }
     
     //    func gestureRecognizer(_: UIGestureRecognizer,
