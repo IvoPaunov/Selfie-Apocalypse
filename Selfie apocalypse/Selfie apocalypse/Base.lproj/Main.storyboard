@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -116,7 +117,7 @@
         <!--Set Selfie Controller-->
         <scene sceneID="TrT-4Z-EP4">
             <objects>
-                <viewController id="jzX-Ti-n79" customClass="SetSelfieController" customModule="Selfie_apocalypse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SetSelfieController" storyboardIdentifier="SetSelfieController" id="jzX-Ti-n79" customClass="SetSelfieController" customModule="Selfie_apocalypse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j05-AX-5rk"/>
                         <viewControllerLayoutGuide type="bottom" id="LCb-7e-SnU"/>
@@ -125,39 +126,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qh0-iv-3j7">
-                                <rect key="frame" x="9" y="10" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qh0-iv-3j7">
+                                <rect key="frame" x="20" y="20" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="jBX-J3-8HZ"/>
+                                    <constraint firstAttribute="width" secondItem="Qh0-iv-3j7" secondAttribute="height" multiplier="1:1" id="mQ6-1Y-VUE"/>
+                                    <constraint firstAttribute="height" constant="200" id="sBz-Yi-RaF"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDd-FA-sg2">
-                                <rect key="frame" x="9" y="266" width="194" height="30"/>
-                                <state key="normal" title="Take new selfie"/>
-                                <connections>
-                                    <action selector="selectSelfieFromCamera:" destination="jzX-Ti-n79" eventType="touchUpInside" id="r2Y-3L-F5p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKy-NG-iof">
-                                <rect key="frame" x="9" y="228" width="194" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKy-NG-iof">
+                                <rect key="frame" x="15" y="487" width="194" height="30"/>
                                 <state key="normal" title="Select from libraty"/>
                                 <connections>
                                     <action selector="selectSelfieFromLibrary:" destination="jzX-Ti-n79" eventType="touchUpInside" id="cFc-mQ-JHe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NC-rU-W0F">
-                                <rect key="frame" x="9" y="184" width="189" height="30"/>
-                                <state key="normal" title="Save that selfie"/>
-                                <connections>
-                                    <action selector="saveSelectedSelfie:" destination="jzX-Ti-n79" eventType="touchUpInside" id="jAW-vJ-1ef"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ll7-eN-WCt">
-                                <rect key="frame" x="14" y="304" width="184" height="30"/>
-                                <state key="normal" title="Slate your selfies"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ll7-eN-WCt">
+                                <rect key="frame" x="20" y="537" width="184" height="30"/>
+                                <state key="normal" title="Slay that selfies"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="showDetail" id="90d-Ra-2xk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDd-FA-sg2">
+                                <rect key="frame" x="10" y="440" width="194" height="30"/>
+                                <state key="normal" title="Take new selfie"/>
+                                <connections>
+                                    <action selector="selectSelfieFromCamera:" destination="jzX-Ti-n79" eventType="touchUpInside" id="r2Y-3L-F5p"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ll7-eN-WCt" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="1MB-Cp-jUV"/>
+                            <constraint firstItem="ll7-eN-WCt" firstAttribute="top" secondItem="BKy-NG-iof" secondAttribute="bottom" constant="20" id="2CV-xe-Pc3"/>
+                            <constraint firstItem="KDd-FA-sg2" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="Ac6-3E-Tg5"/>
+                            <constraint firstItem="ll7-eN-WCt" firstAttribute="top" secondItem="KDd-FA-sg2" secondAttribute="bottom" constant="67" id="LjM-nz-AsN"/>
+                            <constraint firstItem="LCb-7e-SnU" firstAttribute="top" secondItem="ll7-eN-WCt" secondAttribute="bottom" constant="20" id="R01-cL-Oo9"/>
+                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="top" secondItem="8BK-nK-4st" secondAttribute="topMargin" constant="20" id="dPf-Ww-N5a"/>
+                            <constraint firstItem="BKy-NG-iof" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="eF4-eC-GRI"/>
+                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="hXx-qp-btf"/>
+                            <constraint firstItem="KDd-FA-sg2" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="vqZ-nq-J6Y"/>
+                            <constraint firstItem="BKy-NG-iof" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="x4f-Rs-3df"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="inageView" destination="Qh0-iv-3j7" id="xwP-i1-E9Y"/>

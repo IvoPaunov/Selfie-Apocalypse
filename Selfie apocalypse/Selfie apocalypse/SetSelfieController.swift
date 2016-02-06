@@ -1,4 +1,4 @@
-//
+	//
 //  SetSelfieController.swift
 //  Selfie apocalypse
 //
@@ -12,23 +12,16 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
 
     @IBOutlet weak var inageView: UIImageView!
     
-    
-     var imagePicker = UIImagePickerController()
-     var selectedSelfiePath: String?
      let defaults = NSUserDefaults.standardUserDefaults()
+     var imagePicker = UIImagePickerController()
+     let utils = Utils()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imagePicker.delegate = self
         
-        let path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)
-        
-        if(path != nil){
-            let headImage = UIImage(contentsOfFile: path!)
-            
-            inageView.image = headImage
-        }
+        setupUmageView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,58 +29,113 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func saveSelectedSelfie(sender: UIButton) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setValue(self.selectedSelfiePath!, forKey: DefaultKeys.Selected_Selfie_Path.rawValue)
-        defaults.synchronize()
-    }
-
     @IBAction func selectSelfieFromLibrary(sender: UIButton) {
         
-        
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
-        
+        self.imagePicker.allowsEditing = true
+        self.imagePicker.sourceType = .PhotoLibrary
+        self.imagePicker.modalPresentationStyle = .FullScreen
+        presentViewController(self.imagePicker,
+            animated: true,
+            completion: nil)
+//        
+//        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//        presentViewController(imagePicker, animated: true, completion: nil)
+//        
         
     }
     @IBAction func selectSelfieFromCamera(sender: UIButton) {
-        
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Front) != nil {
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            self.imagePicker.cameraCaptureMode = .Photo
+            self.imagePicker.modalPresentationStyle = .FullScreen
+            presentViewController(self.imagePicker,
+                animated: true,
+                completion: nil)
+        } else {
+            self.missingCameraMessage()
+        }
     }
     
     
-    func imagePickerController(picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(
+        picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
-        let imageName = imageURL.lastPathComponent
+            
+        let imageName = "selfie-" + String(NSDate()) +  imageURL.lastPathComponent!
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as NSString
-        let localPath = documentDirectory.stringByAppendingPathComponent(imageName!)
+        let imagePath = documentDirectory.stringByAppendingPathComponent(imageName)
         
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let data = UIImagePNGRepresentation(image)
+        let edditedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        let resizedImage = utils.ResizeImage(edditedImage, targetSize: CGSizeMake(250.0, 250.0))            
+            
+        let data = UIImagePNGRepresentation(resizedImage)
         
-        let writeOK =  data!.writeToFile(localPath, atomically: true)
-        
-//        if(writeOK){
-//            
-//            let imageData = NSData(contentsOfFile: localPath)!
-//            let photoURL = NSURL(fileURLWithPath: localPath)
-//            let imageWithData = UIImage(data: imageData)!
-//            
-//        }
-        
-        //let imageData = NSData(contentsOfFile: localPath.absoluteString)!
-        let photoURL = NSURL(fileURLWithPath: localPath)
-        //let imageWithData = UIImage(data: imageData)!
-        
-        self.selectedSelfiePath = localPath
-        
-        let takenFeomPathImage = UIImage(contentsOfFile: localPath)
+        let writeOK =  data!.writeToFile(imagePath, atomically: true)
+            
+        let takenFeomPathImage = UIImage(contentsOfFile: imagePath)
         
         self.inageView.image = takenFeomPathImage
+        self.setCitcularImageView()
+            
+        self.saveSelectedImagePath(imagePath)
         
         picker.dismissViewControllerAnimated(true, completion: nil)
-        
         }
+    
+    func saveSelectedImagePath(imagePath: String){
+        self.defaults.setValue(imagePath, forKey: DefaultKeys.Selected_Selfie_Path.rawValue)
+        self.defaults.synchronize()
+    }
+    
+    func missingCameraMessage(){
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Ooops, you device has no selfie camera. Choose from library, wisely!",
+            preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.Default,
+            handler: nil)
+        
+        alertVC.addAction(okAction)
+        presentViewController(
+            alertVC,
+            animated: true,
+            completion: nil)
+    }
+    
+    func setupUmageView(){
+
+        
+        var currentSelfie: UIImage?
+        let path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)        
+        
+        if path != nil{
+            let selfieImage = UIImage(contentsOfFile: path!)
+            currentSelfie = selfieImage
+        }
+        
+        if(currentSelfie != nil){
+            self.inageView.image = currentSelfie!
+        }
+        else{
+            let defaultImage = UIImage(named: "Selfie")
+            
+            self.inageView.image =   defaultImage
+        }
+        
+        self.setCitcularImageView()
+    }
+    
+    func setCitcularImageView(){
+        self.inageView.contentMode = .ScaleAspectFit
+        self.inageView.layer.cornerRadius = self.inageView.layer.frame.height / 2
+        self.inageView.clipsToBounds = true;
+        self.inageView.layer.borderWidth = 3
+        self.inageView.layer.borderColor = UIColor.whiteColor().CGColor
+    }
 }

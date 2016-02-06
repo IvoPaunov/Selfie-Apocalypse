@@ -16,7 +16,7 @@ enum SelfieTipe: String {
     case Axe_Susceptible = "Axe"
     case Nunchaku_Susceptible = "Nunchaku"
     
-    static var allTypes: [SelfieTipe] = [.Pike_Susceptible, .Bat_Susceptible, .Axe_Susceptible, .Nunchaku_Susceptible]
+    static var allTypes: [SelfieTipe] = [.Pike_Susceptible, .Bat_Susceptible, .Nunchaku_Susceptible, .Axe_Susceptible]
     
     static func randomType() -> SelfieTipe {
         let i = Int(arc4random_uniform(UInt32(SelfieTipe.allTypes.count)))
@@ -27,26 +27,17 @@ enum SelfieTipe: String {
 
 class Selfie: UIView {
     
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-    // Drawing code
-    }
-    */
-    
-    // var tap: UITapGestureRecognizer?
-    
     var selfieType: SelfieTipe?
     let defaults = NSUserDefaults.standardUserDefaults()
     
     override func drawRect(rect: CGRect) {
-        
-        //let headImage = UIImage(named: "Selfie")
-        
         let path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)!
         
-        let headImage = UIImage(contentsOfFile: path)
+        var headImage = UIImage(contentsOfFile: path)
+        
+        if headImage == nil {
+            headImage = UIImage(named: "Selfie")
+        }
         
         let selfieHead = UIImageView(
             frame: CGRectMake(
@@ -58,13 +49,11 @@ class Selfie: UIView {
         selfieHead.userInteractionEnabled = true
         selfieHead.image = headImage
         selfieHead.layer.cornerRadius = selfieHead.bounds.size.width / 2
-        selfieHead.layer.masksToBounds = true
-        
-        
+        selfieHead.layer.masksToBounds = true        
         
         if self.selfieType != nil{
             
-            selfieHead.layer.borderWidth = 3
+            selfieHead.layer.borderWidth = 2
             let color: UIColor
             
             switch self.selfieType!{
@@ -78,10 +67,8 @@ class Selfie: UIView {
         }
         
         self.userInteractionEnabled = true
-        // self.userInteractionEnabled = false;
         
         self.addSubview(selfieHead)
-        // Drawing code
     }
     
     private func setSelfType(){
@@ -91,24 +78,10 @@ class Selfie: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setSelfType()
-        // self.tap = UITapGestureRecognizer(target: self, action: "doubleTapped")
-        // //self.tap!.numberOfTapsRequired = 2
-        // self.addGestureRecognizer(tap!)
-        
     }
-    //
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setSelfType()
-        //self.tap = UITapGestureRecognizer(target: self, action: "doubleTapped")
     }
-    //
-    //    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    //      //  self.removeFromSuperview()
-    //    }
-    ////
-    //    func doubleTapped() {
-    //        self.removeFromSuperview()
-    //    }
-    
 }
