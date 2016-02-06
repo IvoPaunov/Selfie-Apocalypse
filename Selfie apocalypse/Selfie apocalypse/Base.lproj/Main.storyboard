@@ -89,10 +89,6 @@
                                 <rect key="frame" x="248" y="118" width="77" height="30"/>
                                 <state key="normal" title="how to slay"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTe-Xa-DrW">
-                                <rect key="frame" x="241" y="172" width="91" height="30"/>
-                                <state key="normal" title="last survivors"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9o-km-fQn">
                                 <rect key="frame" x="240" y="226" width="93" height="30"/>
                                 <state key="normal" title="the thru story"/>
@@ -102,6 +98,13 @@
                                 <state key="normal" title="Slay your selfies"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Axj-4J-2Dx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTe-Xa-DrW">
+                                <rect key="frame" x="218" y="175" width="137" height="30"/>
+                                <state key="normal" title="SUPREME SLAYERS"/>
+                                <connections>
+                                    <segue destination="AdH-hu-TeJ" kind="show" id="Sap-GQ-V0J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -200,16 +203,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-lO-XT0">
-                                <rect key="frame" x="20" y="143" width="330" height="30"/>
-                                <state key="normal" title="SELECT SELFIE AND BECOM SUPREME SLAYER"/>
-                                <connections>
-                                    <segue destination="jzX-Ti-n79" kind="show" id="Pql-cz-WqY"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supreme selfie slayers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V84-RJ-9Qs">
+                                <rect key="frame" x="20" y="20" width="560" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="piJ-ac-Os8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGx-qu-bm3">
+                                <rect key="frame" x="20" y="76" width="560" height="504"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yoa-vJ-M7D">
+                                        <rect key="frame" x="8" y="8" width="544" height="488"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="AdH-hu-TeJ" id="vQh-fD-sq3"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yoa-vJ-M7D" firstAttribute="leading" secondItem="kGx-qu-bm3" secondAttribute="leadingMargin" id="G8C-8r-b9K"/>
+                                    <constraint firstItem="yoa-vJ-M7D" firstAttribute="trailing" secondItem="kGx-qu-bm3" secondAttribute="trailingMargin" id="IzM-Az-xji"/>
+                                    <constraint firstItem="yoa-vJ-M7D" firstAttribute="bottom" secondItem="kGx-qu-bm3" secondAttribute="bottomMargin" id="Jxc-Zv-dY2"/>
+                                    <constraint firstItem="yoa-vJ-M7D" firstAttribute="top" secondItem="kGx-qu-bm3" secondAttribute="topMargin" id="Ukc-dF-IEX"/>
+                                    <constraint firstItem="yoa-vJ-M7D" firstAttribute="centerX" secondItem="kGx-qu-bm3" secondAttribute="centerX" id="WKp-CE-9x9"/>
+                                    <constraint firstItem="yoa-vJ-M7D" firstAttribute="centerY" secondItem="kGx-qu-bm3" secondAttribute="centerY" id="noE-3E-iwb"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V84-RJ-9Qs" firstAttribute="leading" secondItem="kGx-qu-bm3" secondAttribute="leading" id="1rD-vz-bJP"/>
+                            <constraint firstItem="V84-RJ-9Qs" firstAttribute="trailing" secondItem="cYA-4S-b0v" secondAttribute="trailingMargin" id="cWC-xj-2lo"/>
+                            <constraint firstItem="V84-RJ-9Qs" firstAttribute="leading" secondItem="cYA-4S-b0v" secondAttribute="leadingMargin" id="ffT-9g-smd"/>
+                            <constraint firstAttribute="bottom" secondItem="kGx-qu-bm3" secondAttribute="bottom" constant="20" symbolic="YES" id="ihs-pn-JeW"/>
+                            <constraint firstItem="kGx-qu-bm3" firstAttribute="top" secondItem="V84-RJ-9Qs" secondAttribute="bottom" constant="8" symbolic="YES" id="kmd-Pe-rcc"/>
+                            <constraint firstItem="kGx-qu-bm3" firstAttribute="trailing" secondItem="V84-RJ-9Qs" secondAttribute="trailing" id="sPn-ca-hix"/>
+                            <constraint firstItem="V84-RJ-9Qs" firstAttribute="top" secondItem="3Xb-yf-GJb" secondAttribute="bottom" id="zSU-cu-iLV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableViewSupremeSlayers" destination="yoa-vJ-M7D" id="lMR-aU-HtH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0q5-mo-c5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,6 +379,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Axj-4J-2Dx"/>
-        <segue reference="VBQ-cL-Wg2"/>
+        <segue reference="hmd-kA-Q0x"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,9 +6,11 @@
 //  Copyright © 2016 Ivo Paounov. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
-
 import Foundation
+
+
 
 class GameController: UIViewController, UIGestureRecognizerDelegate {
     var utils = Utils()  
@@ -21,6 +23,13 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     var currentSelfieReproductionInterval: Float = 3
     var selfies = Set<Selfie>()
     var loopHandler: NSTimer?
+    
+    var backGroundAudioPlayer: AVAudioPlayer?
+    var selfieAudioPlayer: AVAudioPlayer?
+    var batAudioPlayer: AVAudioPlayer?
+    var axeAudioPlayer: AVAudioPlayer?
+    var pikeAudioPlayer: AVAudioPlayer?
+    var nunchakuAudioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var weaponForLastSelfieImageView: UIImageView!
     
@@ -38,6 +47,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
         self.loopHandler?.invalidate()
         self.loopHandler = nil
         self.gameLoop()
+        self.setupAudioPlayers()
     }
     
     override func didReceiveMemoryWarning() {
@@ -253,7 +263,6 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
         if  selfieToAnimate.layer.presentationLayer() != nil{
             let currentSelfieSize = selfieToAnimate.layer.presentationLayer()!.frame.size
             let currentSelfiePosition = selfieToAnimate.layer.presentationLayer()!.position
-            
             bombSpriteLayer.frame = CGRect(
                 x: currentSelfiePosition.x - (currentSelfieSize.width / 2),
                 y: currentSelfiePosition.y - (currentSelfieSize.height / 2),
@@ -393,6 +402,18 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
         
         gameOverController?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.presentViewController(gameOverController!, animated: true, completion: nil)
+    }
+    
+    func setupAudioPlayers(){
+        
+        if let backgraundAudioUrl = NSBundle.mainBundle().URLForResource("apocalypse",
+            withExtension: "mp3") {
+                self.backGroundAudioPlayer = AVAudioPlayerPool.playerWithURL(backgraundAudioUrl)
+                self.backGroundAudioPlayer?.prepareToPlay()
+                self.backGroundAudioPlayer?.volume = 0.3
+                self.backGroundAudioPlayer?.numberOfLoops = 99
+                self.backGroundAudioPlayer?.play()
+        } 
     }
     
     //    func gestureRecognizer(_: UIGestureRecognizer,

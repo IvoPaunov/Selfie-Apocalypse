@@ -12,4 +12,6 @@ import Foundation
 enum DefaultKeys: String {
     case Selected_Selfie_Path = "SelectedSelfiePath"
     case Player_Top_Score = "PlayerTopScore"
+    case Slayer_Name = "SlayerName"
+    case Slayer_Parse_Id = "SlayerParseId"
 }

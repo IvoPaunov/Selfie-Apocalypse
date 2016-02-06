@@ -3,3 +3,4 @@
 //
 
 #import "SpriteLayerC.h"
+#import <Parse/PFObject+Subclass.h>

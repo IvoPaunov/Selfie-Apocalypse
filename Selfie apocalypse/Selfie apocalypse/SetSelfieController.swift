@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SetSelfieController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -15,6 +16,7 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
      let defaults = NSUserDefaults.standardUserDefaults()
      var imagePicker = UIImagePickerController()
      let utils = Utils()
+     let parseService = ParseService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,12 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         imagePicker.delegate = self
         
         setupUmageView()
+        
+     //   parseService.addOrUpdeteSlayerInfo("Gosho", supremeScore: 200)
+        
+       let result =  parseService.getSupremeSlayer(2)
+  
+        
     }
 
     override func didReceiveMemoryWarning() {
