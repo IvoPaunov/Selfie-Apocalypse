@@ -40,11 +40,16 @@ class GameOverController: UIViewController {
             
             let defaults = NSUserDefaults.standardUserDefaults()
             
-            let slayerSupremeScore = defaults.valueForKey(DefaultKeys.Player_Top_Score.rawValue) as? Int            
+            var slayerSupremeScore = defaults.valueForKey(DefaultKeys.Player_Top_Score.rawValue) as? Int
+            
+            if slayerSupremeScore == nil{
+                slayerSupremeScore = 0
+            }
             
             let currentScore = self.score!
             
-            if  slayerSupremeScore != nil && slayerSupremeScore! > currentScore{
+            
+            if slayerSupremeScore! > currentScore{
                 
                 self.labelText.text = "Nice but not your supreme!"
                 self.labelScore.text = "\(currentScore)"

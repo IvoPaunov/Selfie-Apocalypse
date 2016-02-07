@@ -6,6 +6,18 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PixelOperator.ttf">
+            <string>PixelOperator</string>
+            <string>PixelOperator</string>
+            <string>PixelOperator</string>
+            <string>PixelOperator</string>
+            <string>PixelOperator</string>
+        </mutableArray>
+        <mutableArray key="PixelOperatorMono8.ttf">
+            <string>PixelOperatorMono8</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Game Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -21,6 +33,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-CO-ZNZ">
                                 <rect key="frame" x="76" y="223" width="104" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Throw granade"/>
                                 <connections>
                                     <action selector="throwGranade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bI-I8-aXj"/>
@@ -30,12 +43,9 @@
                                 <rect key="frame" x="6" y="5" width="90" height="30"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8a-71-JBB">
-                                <rect key="frame" x="240" y="28" width="120" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.29153830734291486" green="0.86937581806282727" blue="0.16678856896478378" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3oq-az-7KF">
+                                <rect key="frame" x="6" y="43" width="90" height="90"/>
+                            </imageView>
                             <view userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDd-95-bEj" customClass="GranadesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="504" y="5" width="90" height="30"/>
                                 <constraints>
@@ -45,9 +55,12 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3oq-az-7KF">
-                                <rect key="frame" x="6" y="43" width="90" height="90"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8a-71-JBB">
+                                <rect key="frame" x="240" y="28" width="120" height="37"/>
+                                <fontDescription key="fontDescription" name="PixelOperatorMono8" family="Pixel Operator Mono 8" pointSize="29"/>
+                                <color key="textColor" red="0.1227835509" green="0.53945107979999996" blue="0.52839306050000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -83,51 +96,245 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87Q-9s-psh">
-                                <rect key="frame" x="248" y="20" width="98" height="30"/>
-                                <state key="normal" title="Set your selfie"/>
-                                <connections>
-                                    <segue destination="jzX-Ti-n79" kind="show" id="hmd-kA-Q0x"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0W-tx-2j2" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WmP-FR-TQ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="SELFIE SLAYING SCHOOL"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9o-km-fQn">
-                                <rect key="frame" x="240" y="226" width="93" height="30"/>
-                                <state key="normal" title="the thru story"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-cd-3IT">
-                                <rect key="frame" x="248" y="73" width="111" height="30"/>
-                                <state key="normal" title="Slay your selfies"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Axj-4J-2Dx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTe-Xa-DrW">
-                                <rect key="frame" x="218" y="175" width="137" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAA-NG-sw6" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="340" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7RA-2N-AFz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
                                 <state key="normal" title="SUPREME SLAYERS"/>
-                                <connections>
-                                    <segue destination="AdH-hu-TeJ" kind="show" id="Sap-GQ-V0J"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqV-DU-vr9">
-                                <rect key="frame" x="248" y="118" width="77" height="30"/>
-                                <state key="normal" title="how to slay"/>
-                                <connections>
-                                    <segue destination="PZm-Da-Uz9" kind="show" id="T6h-yR-dZh"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FM-rG-uaZ" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="232" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Gic-42-Hn3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="SELECT SOME SELFIE"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-Eq-STd" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="179" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rpw-08-M4Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="SLAY SOME SELFIES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-en-cQf" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="394" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qko-mc-rWi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="THE TRUE sTORY"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="87Q-9s-psh" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="2WR-AY-bp6"/>
-                            <constraint firstItem="87Q-9s-psh" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="9YT-Qi-jgJ"/>
-                            <constraint firstItem="YTe-Xa-DrW" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="LVA-Rl-hbL"/>
-                            <constraint firstItem="ec1-cd-3IT" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="Mva-XX-gDg"/>
-                            <constraint firstItem="ec1-cd-3IT" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="OOf-Mh-FMJ"/>
-                            <constraint firstItem="YTe-Xa-DrW" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="Sb4-cL-F5O"/>
-                            <constraint firstItem="u9o-km-fQn" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="TvM-xc-1E8"/>
-                            <constraint firstItem="rqV-DU-vr9" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="cL9-Ao-2SP"/>
-                            <constraint firstItem="rqV-DU-vr9" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="lep-hB-rvP"/>
-                            <constraint firstItem="u9o-km-fQn" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="xeh-dc-C4M"/>
+                            <constraint firstItem="9FM-rG-uaZ" firstAttribute="top" secondItem="ZtW-Eq-STd" secondAttribute="bottom" constant="23" id="4WH-Wn-IWE"/>
+                            <constraint firstItem="N0W-tx-2j2" firstAttribute="top" secondItem="9FM-rG-uaZ" secondAttribute="bottom" constant="23" id="5ED-F3-xBb"/>
+                            <constraint firstItem="YAA-NG-sw6" firstAttribute="trailing" secondItem="gm0-en-cQf" secondAttribute="trailing" id="9De-LD-hqD"/>
+                            <constraint firstItem="N0W-tx-2j2" firstAttribute="leading" secondItem="eHo-mU-7Ka" secondAttribute="leading" constant="20" id="CbD-kz-rH4"/>
+                            <constraint firstItem="ZtW-Eq-STd" firstAttribute="trailing" secondItem="9FM-rG-uaZ" secondAttribute="trailing" id="HEM-ZN-2GF"/>
+                            <constraint firstItem="gm0-en-cQf" firstAttribute="top" secondItem="YAA-NG-sw6" secondAttribute="bottom" constant="24" id="KHO-3M-MqU"/>
+                            <constraint firstItem="N0W-tx-2j2" firstAttribute="centerY" secondItem="eHo-mU-7Ka" secondAttribute="centerY" id="Pdl-R4-uB1"/>
+                            <constraint firstItem="ZtW-Eq-STd" firstAttribute="leading" secondItem="9FM-rG-uaZ" secondAttribute="leading" id="U2G-Dv-Z06"/>
+                            <constraint firstItem="YAA-NG-sw6" firstAttribute="leading" secondItem="N0W-tx-2j2" secondAttribute="leading" id="VKQ-K4-WOB"/>
+                            <constraint firstItem="gm0-en-cQf" firstAttribute="leading" secondItem="YAA-NG-sw6" secondAttribute="leading" id="W1C-m2-023"/>
+                            <constraint firstItem="YAA-NG-sw6" firstAttribute="trailing" secondItem="N0W-tx-2j2" secondAttribute="trailing" id="ZTm-35-Byz"/>
+                            <constraint firstItem="9FM-rG-uaZ" firstAttribute="trailing" secondItem="N0W-tx-2j2" secondAttribute="trailing" id="f3T-XI-xGD"/>
+                            <constraint firstAttribute="trailing" secondItem="N0W-tx-2j2" secondAttribute="trailing" constant="20" id="fgh-dA-A1f"/>
+                            <constraint firstItem="N0W-tx-2j2" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="hTF-J0-hae"/>
+                            <constraint firstItem="9FM-rG-uaZ" firstAttribute="leading" secondItem="N0W-tx-2j2" secondAttribute="leading" id="htm-H9-Hth"/>
+                            <constraint firstItem="YAA-NG-sw6" firstAttribute="top" secondItem="N0W-tx-2j2" secondAttribute="bottom" constant="25" id="oCJ-J9-jaR"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -423,8 +630,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T6h-yR-dZh"/>
-        <segue reference="Axj-4J-2Dx"/>
-        <segue reference="N1X-e9-n59"/>
+        <segue reference="VBQ-cL-Wg2"/>
     </inferredMetricsTieBreakers>
 </document>

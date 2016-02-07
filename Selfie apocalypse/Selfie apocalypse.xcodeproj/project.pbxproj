@@ -20,6 +20,28 @@
 		856F0D4C1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D4B1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift */; };
 		856F0D4E1C677F800079E46D /* SupremeSlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D4D1C677F800079E46D /* SupremeSlayerCell.swift */; };
 		856F0D501C677FF10079E46D /* SupremeSlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */; };
+		856F0D541C678E220079E46D /* 8bit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D521C678E220079E46D /* 8bit.ttf */; };
+		856F0D551C678E220079E46D /* CrimesTimesSix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D531C678E220079E46D /* CrimesTimesSix.ttf */; };
+		856F0D571C6790BB0079E46D /* PixelOperatorMono8.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D561C6790BB0079E46D /* PixelOperatorMono8.ttf */; };
+		856F0D591C67912C0079E46D /* PixelOperator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D581C67912C0079E46D /* PixelOperator.ttf */; };
+		856F0D731C67AE170079E46D /* DCBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D5D1C67AE170079E46D /* DCBaseButton.swift */; };
+		856F0D741C67AE170079E46D /* DCBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D5E1C67AE170079E46D /* DCBorderedButton.swift */; };
+		856F0D751C67AE170079E46D /* DCRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D5F1C67AE170079E46D /* DCRoundedButton.swift */; };
+		856F0D761C67AE170079E46D /* DCBaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D611C67AE170079E46D /* DCBaseLabel.swift */; };
+		856F0D771C67AE170079E46D /* DCBaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D631C67AE170079E46D /* DCBaseTextField.swift */; };
+		856F0D781C67AE170079E46D /* DCBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D641C67AE170079E46D /* DCBorderedTextField.swift */; };
+		856F0D791C67AE170079E46D /* DCMandatoryEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D651C67AE170079E46D /* DCMandatoryEmailTextField.swift */; };
+		856F0D7A1C67AE170079E46D /* DCMandatoryNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D661C67AE170079E46D /* DCMandatoryNumberTextField.swift */; };
+		856F0D7B1C67AE170079E46D /* DCMandatoryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D671C67AE170079E46D /* DCMandatoryTextField.swift */; };
+		856F0D7C1C67AE170079E46D /* DCPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D681C67AE170079E46D /* DCPickerTextField.swift */; };
+		856F0D7D1C67AE170079E46D /* DCBaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D6A1C67AE170079E46D /* DCBaseTextView.swift */; };
+		856F0D7E1C67AE170079E46D /* DCBorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D6B1C67AE170079E46D /* DCBorderedTextView.swift */; };
+		856F0D7F1C67AE170079E46D /* DCPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D6C1C67AE170079E46D /* DCPlaceholderTextView.swift */; };
+		856F0D801C67AE170079E46D /* DCBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D6E1C67AE170079E46D /* DCBaseView.swift */; };
+		856F0D811C67AE170079E46D /* DCBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D6F1C67AE170079E46D /* DCBorderedView.swift */; };
+		856F0D821C67AE170079E46D /* DCCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D701C67AE170079E46D /* DCCircleView.swift */; };
+		856F0D831C67AE170079E46D /* DCDashedBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D711C67AE170079E46D /* DCDashedBorderedView.swift */; };
+		856F0D841C67AE170079E46D /* DCHairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D721C67AE170079E46D /* DCHairlineView.swift */; };
 		85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85752FD41C62A84C00F38513 /* hearts-sprite.png */; };
 		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
@@ -77,6 +99,29 @@
 		856F0D4B1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfieSalyingWeaponDescription.swift; sourceTree = "<group>"; };
 		856F0D4D1C677F800079E46D /* SupremeSlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupremeSlayerCell.swift; sourceTree = "<group>"; };
 		856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupremeSlayerCell.xib; sourceTree = "<group>"; };
+		856F0D521C678E220079E46D /* 8bit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bit.ttf; sourceTree = "<group>"; };
+		856F0D531C678E220079E46D /* CrimesTimesSix.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CrimesTimesSix.ttf; sourceTree = "<group>"; };
+		856F0D561C6790BB0079E46D /* PixelOperatorMono8.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelOperatorMono8.ttf; sourceTree = "<group>"; };
+		856F0D581C67912C0079E46D /* PixelOperator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelOperator.ttf; sourceTree = "<group>"; };
+		856F0D5B1C67AE170079E46D /* DCKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCKit.h; sourceTree = "<group>"; };
+		856F0D5D1C67AE170079E46D /* DCBaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseButton.swift; sourceTree = "<group>"; };
+		856F0D5E1C67AE170079E46D /* DCBorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBorderedButton.swift; sourceTree = "<group>"; };
+		856F0D5F1C67AE170079E46D /* DCRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCRoundedButton.swift; sourceTree = "<group>"; };
+		856F0D611C67AE170079E46D /* DCBaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseLabel.swift; sourceTree = "<group>"; };
+		856F0D631C67AE170079E46D /* DCBaseTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseTextField.swift; sourceTree = "<group>"; };
+		856F0D641C67AE170079E46D /* DCBorderedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBorderedTextField.swift; sourceTree = "<group>"; };
+		856F0D651C67AE170079E46D /* DCMandatoryEmailTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCMandatoryEmailTextField.swift; sourceTree = "<group>"; };
+		856F0D661C67AE170079E46D /* DCMandatoryNumberTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCMandatoryNumberTextField.swift; sourceTree = "<group>"; };
+		856F0D671C67AE170079E46D /* DCMandatoryTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCMandatoryTextField.swift; sourceTree = "<group>"; };
+		856F0D681C67AE170079E46D /* DCPickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPickerTextField.swift; sourceTree = "<group>"; };
+		856F0D6A1C67AE170079E46D /* DCBaseTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseTextView.swift; sourceTree = "<group>"; };
+		856F0D6B1C67AE170079E46D /* DCBorderedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBorderedTextView.swift; sourceTree = "<group>"; };
+		856F0D6C1C67AE170079E46D /* DCPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPlaceholderTextView.swift; sourceTree = "<group>"; };
+		856F0D6E1C67AE170079E46D /* DCBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseView.swift; sourceTree = "<group>"; };
+		856F0D6F1C67AE170079E46D /* DCBorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBorderedView.swift; sourceTree = "<group>"; };
+		856F0D701C67AE170079E46D /* DCCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCCircleView.swift; sourceTree = "<group>"; };
+		856F0D711C67AE170079E46D /* DCDashedBorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCDashedBorderedView.swift; sourceTree = "<group>"; };
+		856F0D721C67AE170079E46D /* DCHairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCHairlineView.swift; sourceTree = "<group>"; };
 		85752FD41C62A84C00F38513 /* hearts-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-sprite.png"; sourceTree = "<group>"; };
 		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
@@ -164,6 +209,7 @@
 		8545B4B31C609F25008F2624 /* Selfie apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				856F0D511C678D800079E46D /* Fonts */,
 				85D1B2C11C6694CC005DC10B /* AudioFiles */,
 				85D1B2BA1C6650CD005DC10B /* Models */,
 				85D1B2981C661819005DC10B /* Controllers */,
@@ -211,6 +257,84 @@
 				856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */,
 			);
 			name = TableCells;
+			sourceTree = "<group>";
+		};
+		856F0D511C678D800079E46D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D581C67912C0079E46D /* PixelOperator.ttf */,
+				856F0D561C6790BB0079E46D /* PixelOperatorMono8.ttf */,
+				856F0D521C678E220079E46D /* 8bit.ttf */,
+				856F0D531C678E220079E46D /* CrimesTimesSix.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		856F0D5A1C67AE170079E46D /* DCKit */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D5B1C67AE170079E46D /* DCKit.h */,
+				856F0D5C1C67AE170079E46D /* UIButtons */,
+				856F0D601C67AE170079E46D /* UILabels */,
+				856F0D621C67AE170079E46D /* UITextFields */,
+				856F0D691C67AE170079E46D /* UITextViews */,
+				856F0D6D1C67AE170079E46D /* UIViews */,
+			);
+			name = DCKit;
+			path = Frameworks/DCKit;
+			sourceTree = "<group>";
+		};
+		856F0D5C1C67AE170079E46D /* UIButtons */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D5D1C67AE170079E46D /* DCBaseButton.swift */,
+				856F0D5E1C67AE170079E46D /* DCBorderedButton.swift */,
+				856F0D5F1C67AE170079E46D /* DCRoundedButton.swift */,
+			);
+			path = UIButtons;
+			sourceTree = "<group>";
+		};
+		856F0D601C67AE170079E46D /* UILabels */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D611C67AE170079E46D /* DCBaseLabel.swift */,
+			);
+			path = UILabels;
+			sourceTree = "<group>";
+		};
+		856F0D621C67AE170079E46D /* UITextFields */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D631C67AE170079E46D /* DCBaseTextField.swift */,
+				856F0D641C67AE170079E46D /* DCBorderedTextField.swift */,
+				856F0D651C67AE170079E46D /* DCMandatoryEmailTextField.swift */,
+				856F0D661C67AE170079E46D /* DCMandatoryNumberTextField.swift */,
+				856F0D671C67AE170079E46D /* DCMandatoryTextField.swift */,
+				856F0D681C67AE170079E46D /* DCPickerTextField.swift */,
+			);
+			path = UITextFields;
+			sourceTree = "<group>";
+		};
+		856F0D691C67AE170079E46D /* UITextViews */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D6A1C67AE170079E46D /* DCBaseTextView.swift */,
+				856F0D6B1C67AE170079E46D /* DCBorderedTextView.swift */,
+				856F0D6C1C67AE170079E46D /* DCPlaceholderTextView.swift */,
+			);
+			path = UITextViews;
+			sourceTree = "<group>";
+		};
+		856F0D6D1C67AE170079E46D /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D6E1C67AE170079E46D /* DCBaseView.swift */,
+				856F0D6F1C67AE170079E46D /* DCBorderedView.swift */,
+				856F0D701C67AE170079E46D /* DCCircleView.swift */,
+				856F0D711C67AE170079E46D /* DCDashedBorderedView.swift */,
+				856F0D721C67AE170079E46D /* DCHairlineView.swift */,
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 		85752F9C1C62470D00F38513 /* SpritesAssets */ = {
@@ -290,6 +414,7 @@
 		85D1B2A51C664E9F005DC10B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				856F0D5A1C67AE170079E46D /* DCKit */,
 				85D1B2A61C664F5D005DC10B /* AudioToolbox.framework */,
 				85D1B2A71C664F5D005DC10B /* CFNetwork.framework */,
 				85D1B2A81C664F5D005DC10B /* CoreGraphics.framework */,
@@ -398,6 +523,7 @@
 				85D75EFC1C66D44D0016CD24 /* background-2.mp3 in Resources */,
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
 				85D75EFD1C66D44D0016CD24 /* background-3.mp3 in Resources */,
+				856F0D551C678E220079E46D /* CrimesTimesSix.ttf in Resources */,
 				85D75EF61C66C2990016CD24 /* boom.mp3 in Resources */,
 				85C579D01C64EE0500C7002A /* selfie-bang-sprite.png in Resources */,
 				85D1B2CD1C669576005DC10B /* pike.mp3 in Resources */,
@@ -407,8 +533,11 @@
 				85D75EF21C66C21A0016CD24 /* bat.mp3 in Resources */,
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
 				856F0D441C67425A0079E46D /* HowToSlayCell.xib in Resources */,
+				856F0D541C678E220079E46D /* 8bit.ttf in Resources */,
+				856F0D571C6790BB0079E46D /* PixelOperatorMono8.ttf in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
 				85D75EFB1C66D44D0016CD24 /* background-1.mp3 in Resources */,
+				856F0D591C67912C0079E46D /* PixelOperator.ttf in Resources */,
 				85D1B2C91C669576005DC10B /* axe.mp3 in Resources */,
 				85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */,
 				85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */,
@@ -423,24 +552,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856F0D7C1C67AE170079E46D /* DCPickerTextField.swift in Sources */,
+				856F0D7E1C67AE170079E46D /* DCBorderedTextView.swift in Sources */,
 				85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */,
+				856F0D821C67AE170079E46D /* DCCircleView.swift in Sources */,
+				856F0D831C67AE170079E46D /* DCDashedBorderedView.swift in Sources */,
 				856F0D4A1C6760800079E46D /* SelfieSlayingSchoolController.swift in Sources */,
+				856F0D761C67AE170079E46D /* DCBaseLabel.swift in Sources */,
+				856F0D791C67AE170079E46D /* DCMandatoryEmailTextField.swift in Sources */,
+				856F0D811C67AE170079E46D /* DCBorderedView.swift in Sources */,
 				85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */,
 				85D1B29E1C6619BD005DC10B /* GameOverController.swift in Sources */,
+				856F0D801C67AE170079E46D /* DCBaseView.swift in Sources */,
 				85D1B2BC1C665106005DC10B /* Slayer.swift in Sources */,
 				8545B4B71C609F25008F2624 /* GameController.swift in Sources */,
 				85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */,
 				856F0D4E1C677F800079E46D /* SupremeSlayerCell.swift in Sources */,
+				856F0D751C67AE170079E46D /* DCRoundedButton.swift in Sources */,
 				856F0D4C1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift in Sources */,
+				856F0D781C67AE170079E46D /* DCBorderedTextField.swift in Sources */,
 				85D1B29C1C6619A0005DC10B /* SupremeSelfieSlayersController.swift in Sources */,
 				8564962F1C653FB4002A3DFC /* SetSelfieController.swift in Sources */,
+				856F0D731C67AE170079E46D /* DCBaseButton.swift in Sources */,
+				856F0D7B1C67AE170079E46D /* DCMandatoryTextField.swift in Sources */,
+				856F0D7D1C67AE170079E46D /* DCBaseTextView.swift in Sources */,
 				85D1B2C01C669246005DC10B /* AVAudioPlayerPool.swift in Sources */,
+				856F0D841C67AE170079E46D /* DCHairlineView.swift in Sources */,
 				856496321C65429F002A3DFC /* DefaultKeys.swift in Sources */,
+				856F0D7A1C67AE170079E46D /* DCMandatoryNumberTextField.swift in Sources */,
 				8545B4B51C609F25008F2624 /* AppDelegate.swift in Sources */,
 				85913CCD1C638CA00001F8F1 /* Selfie.swift in Sources */,
 				856F0D461C67436A0079E46D /* HowToSlayCell.swift in Sources */,
+				856F0D7F1C67AE170079E46D /* DCPlaceholderTextView.swift in Sources */,
 				85D1B2BE1C665390005DC10B /* ParseService.swift in Sources */,
+				856F0D771C67AE170079E46D /* DCBaseTextField.swift in Sources */,
 				85C579CE1C64DA6800C7002A /* Utils.swift in Sources */,
+				856F0D741C67AE170079E46D /* DCBorderedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

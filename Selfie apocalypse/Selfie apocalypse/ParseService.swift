@@ -30,8 +30,6 @@ class ParseService {
         return res
     }
     
-    
-    
     func addOrUpdeteSlayerInfo(newSlayerName: String?, supremeScore: Int?){
         
         let query = PFQuery(className: String(Slayer))
@@ -79,7 +77,10 @@ class ParseService {
             currentSlayer = Slayer()
             currentSlayer?.identityId = UIDevice.currentDevice().identifierForVendor!.UUIDString
             currentSlayer?.slayerName = currentSlayerName!
-            currentSlayer?.supremeScore = 0
+            
+            if  supremeScore != nil {
+                currentSlayer?.supremeScore = supremeScore!
+            }
             
             currentSlayer?.saveInBackgroundWithBlock {
                 (success, error) -> Void in

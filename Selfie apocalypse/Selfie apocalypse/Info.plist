@@ -36,5 +36,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>8bit.ttf</string>
+		<string>CrimesTimesSix.ttf</string>
+		<string>PixelOperatorMono8.ttf</string>
+		<string>PixelOperator.ttf</string>
+	</array>
 </dict>
 </plist>

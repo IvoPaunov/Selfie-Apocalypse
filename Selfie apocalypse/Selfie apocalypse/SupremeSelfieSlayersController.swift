@@ -66,7 +66,7 @@ class SupremeSelfieSlayersController: UIViewController, UITableViewDataSource {
         let query = PFQuery(className: String(Slayer))
         query.cachePolicy = .NetworkElseCache
         query.orderByDescending("supremeScore")
-        query.limit = 10
+        query.limit = 20
         
         query.findObjectsInBackgroundWithBlock {
             (result, error) -> Void in

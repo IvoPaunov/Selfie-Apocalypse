@@ -31,9 +31,13 @@ class Selfie: UIView {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     override func drawRect(rect: CGRect) {
-        let path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)!
+        var path = defaults.stringForKey(DefaultKeys.Selected_Selfie_Path.rawValue)
         
-        var headImage = UIImage(contentsOfFile: path)
+        if path == nil{
+            path = ""
+        }
+        
+        var headImage = UIImage(contentsOfFile: path!)
         
         if headImage == nil {
             headImage = UIImage(named: "Selfie")
