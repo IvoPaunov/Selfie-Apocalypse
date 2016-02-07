@@ -53,18 +53,29 @@ class Selfie: UIView {
         selfieHead.userInteractionEnabled = true
         selfieHead.image = headImage
         selfieHead.layer.cornerRadius = selfieHead.bounds.size.width / 2
-        selfieHead.layer.masksToBounds = true        
+        selfieHead.layer.masksToBounds = true
         
+        
+        var spriteColor: String?
+
         if self.selfieType != nil{
             
-            selfieHead.layer.borderWidth = 2
+            selfieHead.layer.borderWidth = 1
             let color: UIColor
             
             switch self.selfieType!{
-            case SelfieTipe.Pike_Susceptible: color = UIColor.yellowColor()
-            case SelfieTipe.Bat_Susceptible: color = UIColor.brownColor()
-            case SelfieTipe.Axe_Susceptible: color = UIColor.blackColor()
-            case SelfieTipe.Nunchaku_Susceptible: color = UIColor.grayColor()
+            case SelfieTipe.Pike_Susceptible:
+                color = UIColor.yellowColor()
+                spriteColor = "yellow"
+            case SelfieTipe.Bat_Susceptible:
+                color = UIColor.brownColor()
+                spriteColor = "brown"
+            case SelfieTipe.Axe_Susceptible:
+                color = UIColor.blackColor()
+                spriteColor = "black"
+            case SelfieTipe.Nunchaku_Susceptible:
+                color = UIColor.grayColor()
+                spriteColor = "gray"
             }
             
             selfieHead.layer.borderColor = color.CGColor
@@ -72,7 +83,40 @@ class Selfie: UIView {
         
         self.userInteractionEnabled = true
         
+        let torsoSprite = self.initTorsoSpriteLayer(spriteColor!)
+        
+        let x = CGFloat( 0) //selfieHead.layer.position.x / 2
+        let y = (selfieHead.layer.position.y + selfieHead.frame.size.height ) / 1.75
+        let width = selfieHead.frame.size.width
+        let height = width
+        
+        torsoSprite.frame = CGRect(x: x, y: y, width: width, height:height)
+        
+        torsoSprite.playAnimationAgain()
+        torsoSprite.zPosition = selfieHead.layer.zPosition - 1
+        
         self.addSubview(selfieHead)
+        self.layer.addSublayer(torsoSprite)
+    }
+    
+    
+    private func initTorsoSpriteLayer(color: String) -> SpriteLayerC{
+        
+        
+        
+        
+        let sprite = UIImage(named: "selfie-torso-sprite-\(color).png")
+        let size = CGSize(width: 125, height: 110)
+        
+        let torsoSpriteLayer = SpriteLayerC.init(
+            imageAndAnimationSettings: sprite,
+            sampleSize: size,
+            animationFrameStart: 1,
+            animationFrameEnd: 177,
+            animationDuration: 5,
+            lanimationRepeatCount: 20)
+        
+        return torsoSpriteLayer
     }
     
     private func setSelfType(){

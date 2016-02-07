@@ -26,11 +26,12 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         setupUmageView()
         
      //   parseService.addOrUpdeteSlayerInfo("Gosho", supremeScore: 200)
-        
-       let result =  parseService.getSupremeSlayer(2)
-  
-        
     }
+    
+//    override func viewWillDisappear(animated: Bool) {
+//        
+//        self.removeAudioPlayers()
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

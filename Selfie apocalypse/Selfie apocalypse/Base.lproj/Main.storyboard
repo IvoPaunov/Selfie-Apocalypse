@@ -24,6 +24,8 @@
             <string>PixelOperator</string>
             <string>PixelOperator</string>
             <string>PixelOperator</string>
+            <string>PixelOperator</string>
+            <string>PixelOperator</string>
         </mutableArray>
         <mutableArray key="PixelOperatorMono8.ttf">
             <string>PixelOperatorMono8</string>
@@ -42,14 +44,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-CO-ZNZ">
-                                <rect key="frame" x="76" y="223" width="104" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Throw granade"/>
-                                <connections>
-                                    <action selector="throwGranade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bI-I8-aXj"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nA8-1P-Z3e" customClass="LivesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="6" y="5" width="90" height="30"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
@@ -69,11 +63,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8a-71-JBB">
                                 <rect key="frame" x="240" y="28" width="120" height="37"/>
                                 <fontDescription key="fontDescription" name="PixelOperatorMono8" family="Pixel Operator Mono 8" pointSize="29"/>
-                                <color key="textColor" red="0.1227835509" green="0.53945107979999996" blue="0.52839306050000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="J8a-71-JBB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RS6-qV-sQh"/>
@@ -107,6 +101,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0W-tx-2j2" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WmP-FR-TQ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="SELFIE SLAYING SCHOOL"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="PZm-Da-Uz9" kind="show" id="f0W-3c-qaH"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAA-NG-sw6" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="340" width="560" height="30"/>
                                 <constraints>
@@ -201,50 +242,6 @@
                                     <segue destination="jzX-Ti-n79" kind="show" id="Tsy-I0-4hM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-Eq-STd" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
-                                <rect key="frame" x="20" y="179" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Rpw-08-M4Q"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
-                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                                <state key="normal" title="SLAY SOME SELFIES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
-                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-en-cQf" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="394" width="560" height="30"/>
                                 <constraints>
@@ -289,14 +286,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0W-tx-2j2" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
-                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-Eq-STd" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="179" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="WmP-FR-TQ9"/>
+                                    <constraint firstAttribute="height" constant="30" id="Rpw-08-M4Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                                <state key="normal" title="SELFIE SLAYING SCHOOL"/>
+                                <state key="normal" title="SLAY SOME SELFIES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
@@ -333,7 +330,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="PZm-Da-Uz9" kind="show" id="f0W-3c-qaH"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="aZ4-Jt-MZx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,17 +374,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qh0-iv-3j7">
                                 <rect key="frame" x="200" y="20" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9e9-gb-OZ2"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="AdA-nG-Fi9"/>
-                                    <constraint firstAttribute="width" constant="200" id="jBX-J3-8HZ"/>
-                                    <constraint firstAttribute="width" secondItem="Qh0-iv-3j7" secondAttribute="height" multiplier="1:1" id="mQ6-1Y-VUE"/>
-                                    <constraint firstAttribute="height" constant="200" id="sBz-Yi-RaF"/>
+                                    <constraint firstAttribute="width" secondItem="Qh0-iv-3j7" secondAttribute="height" multiplier="1:1" id="cVg-he-vfY"/>
+                                    <constraint firstAttribute="height" constant="200" id="erZ-5a-15X"/>
+                                    <constraint firstAttribute="width" constant="200" id="mum-iu-PXZ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzq-2f-JDB" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzq-2f-JDB" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="502" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xMN-dM-Zqw"/>
+                                    <constraint firstAttribute="height" constant="30" id="DNE-Ia-dWk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -431,34 +426,10 @@
                                     <action selector="selectSelfieFromLibrary:" destination="jzX-Ti-n79" eventType="touchUpInside" id="awK-0V-nVi"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER SELFIE SLAYER NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-HT-RXc" customClass="DCBorderedTextField" customModule="Selfie_apocalypse" customModuleProvider="target">
-                                <rect key="frame" x="20" y="244" width="560" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="uct-h3-qdX"/>
-                                </constraints>
-                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="0.53191489361702127" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM1-U1-8wE" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM1-U1-8wE" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="452" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="pb5-Dl-pmt"/>
+                                    <constraint firstAttribute="height" constant="30" id="m0l-Mm-IGt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -502,18 +473,143 @@
                                     <action selector="selectSelfieFromCamera:" destination="jzX-Ti-n79" eventType="touchUpInside" id="wxN-mK-3he"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZQ-Kt-vnh" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="550" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qOG-ZH-6UL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="SLAY SOME SELFIES AGAIN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.86666666670000003" green="1" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="wMG-vR-YSW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daK-Zf-scY">
+                                <rect key="frame" x="20" y="20" width="29" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="J54-NN-axg"/>
+                                    <constraint firstAttribute="height" constant="48" id="hUk-8K-xrh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="48"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="OEp-RS-joS" kind="show" id="ToZ-6v-UW5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER SELFIE SLAYER NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-HT-RXc" customClass="DCBorderedTextField" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="244" width="560" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="0.53191489361702127" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="top" secondItem="Qh0-iv-3j7" secondAttribute="bottom" constant="24" id="PP8-GG-tSv"/>
-                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="top" secondItem="PM1-U1-8wE" secondAttribute="bottom" constant="20" id="Qaw-K8-f9E"/>
-                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="top" secondItem="8BK-nK-4st" secondAttribute="topMargin" constant="20" id="dPf-Ww-N5a"/>
-                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="hXx-qp-btf"/>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="leading" secondItem="PM1-U1-8wE" secondAttribute="leading" id="haV-dc-Udx"/>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="trailing" secondItem="PM1-U1-8wE" secondAttribute="trailing" id="kzJ-0F-fX9"/>
-                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="vaK-V1-uOC"/>
-                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="leading" secondItem="PM1-U1-8wE" secondAttribute="leading" id="vq0-Y2-suo"/>
-                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="trailing" secondItem="PM1-U1-8wE" secondAttribute="trailing" id="zpN-bB-3nM"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="trailing" secondItem="kZQ-Kt-vnh" secondAttribute="trailing" id="1dw-89-HG3"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="trailing" secondItem="PM1-U1-8wE" secondAttribute="trailing" id="1i2-g7-kjs"/>
+                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="leading" secondItem="Wzq-2f-JDB" secondAttribute="leading" id="4DR-qI-cy2"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="leading" secondItem="PM1-U1-8wE" secondAttribute="leading" id="KTs-4q-ode"/>
+                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="top" secondItem="j05-AX-5rk" secondAttribute="bottom" id="L22-A9-yar"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="leading" secondItem="daK-Zf-scY" secondAttribute="leading" id="RdC-QV-UEd"/>
+                            <constraint firstItem="PM1-U1-8wE" firstAttribute="trailing" secondItem="dVI-HT-RXc" secondAttribute="trailing" id="XcM-yl-ahX"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="centerX" secondItem="Qh0-iv-3j7" secondAttribute="centerX" id="acm-Qt-nFz"/>
+                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="top" secondItem="Wzq-2f-JDB" secondAttribute="bottom" constant="18" id="ane-qb-4j8"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="top" secondItem="PM1-U1-8wE" secondAttribute="bottom" constant="20" id="bd2-1X-Ae9"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="leading" secondItem="PM1-U1-8wE" secondAttribute="leading" id="gMc-wo-zos"/>
+                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="centerX" secondItem="8BK-nK-4st" secondAttribute="centerX" id="gR0-MN-HoR"/>
+                            <constraint firstAttribute="bottom" secondItem="kZQ-Kt-vnh" secondAttribute="bottom" constant="20" symbolic="YES" id="hkW-wr-o9J"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="top" secondItem="Qh0-iv-3j7" secondAttribute="bottom" constant="24" id="hrX-Fn-LOJ"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="leading" secondItem="8BK-nK-4st" secondAttribute="leadingMargin" id="nBS-sh-wDG"/>
+                            <constraint firstItem="daK-Zf-scY" firstAttribute="top" secondItem="Qh0-iv-3j7" secondAttribute="top" id="uYQ-35-KA3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -536,6 +632,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPREME SELFIE SLAYERS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V84-RJ-9Qs">
+                                <rect key="frame" x="52" y="20" width="528" height="48"/>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGx-qu-bm3">
                                 <rect key="frame" x="20" y="96" width="560" height="484"/>
                                 <subviews>
@@ -610,12 +712,6 @@
                                     <segue destination="OEp-RS-joS" kind="show" id="c7G-ns-Fhv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUPREME SELFIE SLAYERS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V84-RJ-9Qs">
-                                <rect key="frame" x="52" y="20" width="528" height="48"/>
-                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
-                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -669,53 +765,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsl-qw-nFg" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
-                                <rect key="frame" x="20" y="476" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="L1c-Pd-2og"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
-                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                                <state key="normal" title="SLAY SOME SELFIES AGAIN"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
-                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
-                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
-                                        <color key="value" red="0.86666666670000003" green="1" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="selectSelfieFromCamera:" destination="jzX-Ti-n79" eventType="touchUpInside" id="ugH-LQ-3Ab"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDD-pp-b0l" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <constraints>
@@ -760,18 +809,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="selectSelfieFromCamera:" destination="jzX-Ti-n79" eventType="touchUpInside" id="VYh-hL-HMn"/>
+                                    <segue destination="OEp-RS-joS" kind="show" id="p1w-4K-naU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVH-ue-mOy" customClass="DCBaseLabel" customModule="Selfie_apocalypse" customModuleProvider="target">
-                                <rect key="frame" x="20" y="112" width="560" height="84"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="3jY-Fh-0bv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="50"/>
-                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEXT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi0-JW-vUF" customClass="DCBaseLabel" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="560" height="84"/>
                                 <constraints>
@@ -781,6 +821,62 @@
                                 <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVH-ue-mOy" customClass="DCBaseLabel" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="112" width="560" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="3jY-Fh-0bv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="50"/>
+                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsl-qw-nFg" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="476" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="L1c-Pd-2og"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="SLAY SOME SELFIES AGAIN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.86666666670000003" green="1" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="sKb-io-guu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -928,6 +1024,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mCs-se-hgm"/>
+        <segue reference="ToZ-6v-UW5"/>
+        <segue reference="wMG-vR-YSW"/>
     </inferredMetricsTieBreakers>
 </document>

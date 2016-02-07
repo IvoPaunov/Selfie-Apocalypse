@@ -87,6 +87,7 @@
         anim.duration = duration;
         anim.repeatCount = repeatCount;
         //anim.autoreverses = false;
+        //anim.speed = 1;
         
         currentAnimation = anim;
         

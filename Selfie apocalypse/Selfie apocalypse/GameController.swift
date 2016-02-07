@@ -568,10 +568,9 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
     }
     
     func setBaskgroundAudio(){
-        if self.backGroundAudioPlayer != nil {
-            self.backGroundAudioPlayer?.stop()
-            self.backGroundAudioPlayer = nil
-        }
+        self.backGroundAudioPlayer?.stop()
+        self.backGroundAudioPlayer = nil
+       
         
         let randomNumber = arc4random_uniform(UInt32(4)) + 1
         
@@ -583,7 +582,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
                 self.backGroundAudioPlayer?.prepareToPlay()
                 self.backGroundAudioPlayer?.volume = 0.3
                 self.backGroundAudioPlayer?.numberOfLoops = 0
-                self.batAudioPlayer?.delegate = self
+                self.backGroundAudioPlayer?.delegate = self
                 self.backGroundAudioPlayer?.play()
         }
     }
@@ -608,6 +607,9 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        
+        player.stop()
+       //player.
         
         self.setBaskgroundAudio()
     }
