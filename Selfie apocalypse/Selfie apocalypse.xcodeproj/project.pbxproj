@@ -42,6 +42,7 @@
 		856F0D821C67AE170079E46D /* DCCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D701C67AE170079E46D /* DCCircleView.swift */; };
 		856F0D831C67AE170079E46D /* DCDashedBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D711C67AE170079E46D /* DCDashedBorderedView.swift */; };
 		856F0D841C67AE170079E46D /* DCHairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D721C67AE170079E46D /* DCHairlineView.swift */; };
+		856F0D861C67BD460079E46D /* Exrensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D851C67BD460079E46D /* Exrensions.swift */; };
 		85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85752FD41C62A84C00F38513 /* hearts-sprite.png */; };
 		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
@@ -122,6 +123,7 @@
 		856F0D701C67AE170079E46D /* DCCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCCircleView.swift; sourceTree = "<group>"; };
 		856F0D711C67AE170079E46D /* DCDashedBorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCDashedBorderedView.swift; sourceTree = "<group>"; };
 		856F0D721C67AE170079E46D /* DCHairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCHairlineView.swift; sourceTree = "<group>"; };
+		856F0D851C67BD460079E46D /* Exrensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exrensions.swift; sourceTree = "<group>"; };
 		85752FD41C62A84C00F38513 /* hearts-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-sprite.png"; sourceTree = "<group>"; };
 		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 		85913CCE1C63A5C80001F8F1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				856F0D851C67BD460079E46D /* Exrensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				8564962F1C653FB4002A3DFC /* SetSelfieController.swift in Sources */,
 				856F0D731C67AE170079E46D /* DCBaseButton.swift in Sources */,
 				856F0D7B1C67AE170079E46D /* DCMandatoryTextField.swift in Sources */,
+				856F0D861C67BD460079E46D /* Exrensions.swift in Sources */,
 				856F0D7D1C67AE170079E46D /* DCBaseTextView.swift in Sources */,
 				85D1B2C01C669246005DC10B /* AVAudioPlayerPool.swift in Sources */,
 				856F0D841C67AE170079E46D /* DCHairlineView.swift in Sources */,
