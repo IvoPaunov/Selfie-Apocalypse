@@ -14,6 +14,12 @@
 		8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8545B4BD1C609F25008F2624 /* LaunchScreen.storyboard */; };
 		8564962F1C653FB4002A3DFC /* SetSelfieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564962E1C653FB4002A3DFC /* SetSelfieController.swift */; };
 		856496321C65429F002A3DFC /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856496311C65429F002A3DFC /* DefaultKeys.swift */; };
+		856F0D441C67425A0079E46D /* HowToSlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D431C67425A0079E46D /* HowToSlayCell.xib */; };
+		856F0D461C67436A0079E46D /* HowToSlayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D451C67436A0079E46D /* HowToSlayCell.swift */; };
+		856F0D4A1C6760800079E46D /* SelfieSlayingSchoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D491C6760800079E46D /* SelfieSlayingSchoolController.swift */; };
+		856F0D4C1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D4B1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift */; };
+		856F0D4E1C677F800079E46D /* SupremeSlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D4D1C677F800079E46D /* SupremeSlayerCell.swift */; };
+		856F0D501C677FF10079E46D /* SupremeSlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */; };
 		85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85752FD41C62A84C00F38513 /* hearts-sprite.png */; };
 		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
@@ -41,12 +47,17 @@
 		85D1B2BC1C665106005DC10B /* Slayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1B2BB1C665106005DC10B /* Slayer.swift */; };
 		85D1B2BE1C665390005DC10B /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1B2BD1C665390005DC10B /* ParseService.swift */; };
 		85D1B2C01C669246005DC10B /* AVAudioPlayerPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1B2BF1C669246005DC10B /* AVAudioPlayerPool.swift */; };
-		85D1B2C81C669576005DC10B /* apocalypse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D1B2C21C669576005DC10B /* apocalypse.mp3 */; };
 		85D1B2C91C669576005DC10B /* axe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D1B2C31C669576005DC10B /* axe.mp3 */; };
-		85D1B2CA1C669576005DC10B /* bat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D1B2C41C669576005DC10B /* bat.mp3 */; };
 		85D1B2CB1C669576005DC10B /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D1B2C51C669576005DC10B /* camera.mp3 */; };
-		85D1B2CC1C669576005DC10B /* nun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D1B2C61C669576005DC10B /* nun.mp3 */; };
 		85D1B2CD1C669576005DC10B /* pike.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D1B2C71C669576005DC10B /* pike.mp3 */; };
+		85D75EF01C66C2070016CD24 /* nun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EEF1C66C2070016CD24 /* nun.mp3 */; };
+		85D75EF21C66C21A0016CD24 /* bat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EF11C66C21A0016CD24 /* bat.mp3 */; };
+		85D75EF41C66C2210016CD24 /* self-over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EF31C66C2210016CD24 /* self-over.mp3 */; };
+		85D75EF61C66C2990016CD24 /* boom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EF51C66C2990016CD24 /* boom.mp3 */; };
+		85D75EFB1C66D44D0016CD24 /* background-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EF71C66D44D0016CD24 /* background-1.mp3 */; };
+		85D75EFC1C66D44D0016CD24 /* background-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EF81C66D44D0016CD24 /* background-2.mp3 */; };
+		85D75EFD1C66D44D0016CD24 /* background-3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EF91C66D44D0016CD24 /* background-3.mp3 */; };
+		85D75EFE1C66D44D0016CD24 /* background-4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85D75EFA1C66D44D0016CD24 /* background-4.mp3 */; };
 		85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E7D1A81C62314100B2BC82 /* SpriteLayerC.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +71,12 @@
 		8545B4C01C609F25008F2624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8564962E1C653FB4002A3DFC /* SetSelfieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSelfieController.swift; sourceTree = "<group>"; };
 		856496311C65429F002A3DFC /* DefaultKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		856F0D431C67425A0079E46D /* HowToSlayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HowToSlayCell.xib; sourceTree = "<group>"; };
+		856F0D451C67436A0079E46D /* HowToSlayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToSlayCell.swift; sourceTree = "<group>"; };
+		856F0D491C6760800079E46D /* SelfieSlayingSchoolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfieSlayingSchoolController.swift; sourceTree = "<group>"; };
+		856F0D4B1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfieSalyingWeaponDescription.swift; sourceTree = "<group>"; };
+		856F0D4D1C677F800079E46D /* SupremeSlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupremeSlayerCell.swift; sourceTree = "<group>"; };
+		856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupremeSlayerCell.xib; sourceTree = "<group>"; };
 		85752FD41C62A84C00F38513 /* hearts-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-sprite.png"; sourceTree = "<group>"; };
 		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
@@ -87,12 +104,17 @@
 		85D1B2BB1C665106005DC10B /* Slayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slayer.swift; sourceTree = "<group>"; };
 		85D1B2BD1C665390005DC10B /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		85D1B2BF1C669246005DC10B /* AVAudioPlayerPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayerPool.swift; sourceTree = "<group>"; };
-		85D1B2C21C669576005DC10B /* apocalypse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apocalypse.mp3; sourceTree = "<group>"; };
 		85D1B2C31C669576005DC10B /* axe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = axe.mp3; sourceTree = "<group>"; };
-		85D1B2C41C669576005DC10B /* bat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bat.mp3; sourceTree = "<group>"; };
 		85D1B2C51C669576005DC10B /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
-		85D1B2C61C669576005DC10B /* nun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nun.mp3; sourceTree = "<group>"; };
 		85D1B2C71C669576005DC10B /* pike.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pike.mp3; sourceTree = "<group>"; };
+		85D75EEF1C66C2070016CD24 /* nun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nun.mp3; sourceTree = "<group>"; };
+		85D75EF11C66C21A0016CD24 /* bat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bat.mp3; sourceTree = "<group>"; };
+		85D75EF31C66C2210016CD24 /* self-over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "self-over.mp3"; sourceTree = "<group>"; };
+		85D75EF51C66C2990016CD24 /* boom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boom.mp3; sourceTree = "<group>"; };
+		85D75EF71C66D44D0016CD24 /* background-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-1.mp3"; sourceTree = "<group>"; };
+		85D75EF81C66D44D0016CD24 /* background-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-2.mp3"; sourceTree = "<group>"; };
+		85D75EF91C66D44D0016CD24 /* background-3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-3.mp3"; sourceTree = "<group>"; };
+		85D75EFA1C66D44D0016CD24 /* background-4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-4.mp3"; sourceTree = "<group>"; };
 		85E7D1A71C62314100B2BC82 /* Selfie apocalypse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selfie apocalypse-Bridging-Header.h"; sourceTree = "<group>"; };
 		85E7D1A81C62314100B2BC82 /* SpriteLayerC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteLayerC.m; sourceTree = "<group>"; };
 		85E7D1AA1C62329A00B2BC82 /* SpriteLayerC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteLayerC.h; sourceTree = "<group>"; };
@@ -164,6 +186,7 @@
 		8545B4C61C609FA4008F2624 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				856F0D421C67408F0079E46D /* TableCells */,
 				85752FD61C63872700F38513 /* Selfie */,
 				85791B651C6118960087E258 /* GranadesStatusBar */,
 				85791B621C6117B30087E258 /* LivesStatusBar */,
@@ -177,6 +200,17 @@
 				856496311C65429F002A3DFC /* DefaultKeys.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		856F0D421C67408F0079E46D /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				856F0D431C67425A0079E46D /* HowToSlayCell.xib */,
+				856F0D451C67436A0079E46D /* HowToSlayCell.swift */,
+				856F0D4D1C677F800079E46D /* SupremeSlayerCell.swift */,
+				856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */,
+			);
+			name = TableCells;
 			sourceTree = "<group>";
 		};
 		85752F9C1C62470D00F38513 /* SpritesAssets */ = {
@@ -248,6 +282,7 @@
 				8564962E1C653FB4002A3DFC /* SetSelfieController.swift */,
 				85D1B29B1C6619A0005DC10B /* SupremeSelfieSlayersController.swift */,
 				85D1B29D1C6619BD005DC10B /* GameOverController.swift */,
+				856F0D491C6760800079E46D /* SelfieSlayingSchoolController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -276,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				85D1B2BB1C665106005DC10B /* Slayer.swift */,
+				856F0D4B1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,11 +319,16 @@
 		85D1B2C11C6694CC005DC10B /* AudioFiles */ = {
 			isa = PBXGroup;
 			children = (
-				85D1B2C21C669576005DC10B /* apocalypse.mp3 */,
+				85D75EF71C66D44D0016CD24 /* background-1.mp3 */,
+				85D75EF81C66D44D0016CD24 /* background-2.mp3 */,
+				85D75EF91C66D44D0016CD24 /* background-3.mp3 */,
+				85D75EFA1C66D44D0016CD24 /* background-4.mp3 */,
+				85D75EF51C66C2990016CD24 /* boom.mp3 */,
+				85D75EF31C66C2210016CD24 /* self-over.mp3 */,
+				85D75EF11C66C21A0016CD24 /* bat.mp3 */,
+				85D75EEF1C66C2070016CD24 /* nun.mp3 */,
 				85D1B2C31C669576005DC10B /* axe.mp3 */,
-				85D1B2C41C669576005DC10B /* bat.mp3 */,
 				85D1B2C51C669576005DC10B /* camera.mp3 */,
-				85D1B2C61C669576005DC10B /* nun.mp3 */,
 				85D1B2C71C669576005DC10B /* pike.mp3 */,
 			);
 			name = AudioFiles;
@@ -353,18 +394,25 @@
 			files = (
 				85791B6D1C61589D0087E258 /* bang-sprite.png in Resources */,
 				85D1B2CB1C669576005DC10B /* camera.mp3 in Resources */,
+				856F0D501C677FF10079E46D /* SupremeSlayerCell.xib in Resources */,
+				85D75EFC1C66D44D0016CD24 /* background-2.mp3 in Resources */,
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
+				85D75EFD1C66D44D0016CD24 /* background-3.mp3 in Resources */,
+				85D75EF61C66C2990016CD24 /* boom.mp3 in Resources */,
 				85C579D01C64EE0500C7002A /* selfie-bang-sprite.png in Resources */,
-				85D1B2CA1C669576005DC10B /* bat.mp3 in Resources */,
 				85D1B2CD1C669576005DC10B /* pike.mp3 in Resources */,
+				85D75EF41C66C2210016CD24 /* self-over.mp3 in Resources */,
+				85D75EF01C66C2070016CD24 /* nun.mp3 in Resources */,
 				85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */,
-				85D1B2C81C669576005DC10B /* apocalypse.mp3 in Resources */,
+				85D75EF21C66C21A0016CD24 /* bat.mp3 in Resources */,
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
+				856F0D441C67425A0079E46D /* HowToSlayCell.xib in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
+				85D75EFB1C66D44D0016CD24 /* background-1.mp3 in Resources */,
 				85D1B2C91C669576005DC10B /* axe.mp3 in Resources */,
 				85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */,
 				85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */,
-				85D1B2CC1C669576005DC10B /* nun.mp3 in Resources */,
+				85D75EFE1C66D44D0016CD24 /* background-4.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,17 +424,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */,
+				856F0D4A1C6760800079E46D /* SelfieSlayingSchoolController.swift in Sources */,
 				85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */,
 				85D1B29E1C6619BD005DC10B /* GameOverController.swift in Sources */,
 				85D1B2BC1C665106005DC10B /* Slayer.swift in Sources */,
 				8545B4B71C609F25008F2624 /* GameController.swift in Sources */,
 				85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */,
+				856F0D4E1C677F800079E46D /* SupremeSlayerCell.swift in Sources */,
+				856F0D4C1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift in Sources */,
 				85D1B29C1C6619A0005DC10B /* SupremeSelfieSlayersController.swift in Sources */,
 				8564962F1C653FB4002A3DFC /* SetSelfieController.swift in Sources */,
 				85D1B2C01C669246005DC10B /* AVAudioPlayerPool.swift in Sources */,
 				856496321C65429F002A3DFC /* DefaultKeys.swift in Sources */,
 				8545B4B51C609F25008F2624 /* AppDelegate.swift in Sources */,
 				85913CCD1C638CA00001F8F1 /* Selfie.swift in Sources */,
+				856F0D461C67436A0079E46D /* HowToSlayCell.swift in Sources */,
 				85D1B2BE1C665390005DC10B /* ParseService.swift in Sources */,
 				85C579CE1C64DA6800C7002A /* Utils.swift in Sources */,
 			);

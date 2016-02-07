@@ -32,7 +32,7 @@ class ParseService {
     
     
     
-    func addOrUpdeteSlayerInfo(newSlayerName: String?, supremeScore: Int){
+    func addOrUpdeteSlayerInfo(newSlayerName: String?, supremeScore: Int?){
         
         let query = PFQuery(className: String(Slayer))
         query.cachePolicy = .NetworkElseCache
@@ -64,8 +64,12 @@ class ParseService {
                     
                   let rsultSlayer = slayer as! Slayer
                     
-                    rsultSlayer.slayerName = newSlayerName!
-                    rsultSlayer.supremeScore = supremeScore
+                    rsultSlayer.slayerName = currentSlayerName!
+                    
+                    if  supremeScore != nil {
+                        rsultSlayer.supremeScore = supremeScore!
+                    }
+          
                     rsultSlayer.saveInBackground()
                     
                     print(slayer)

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LivesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
@@ -17,19 +18,48 @@
             <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="ehU-a5-A1h">
+                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="ehU-a5-A1h">
                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ehU-a5-A1h" secondAttribute="height" multiplier="1:1" id="EXR-17-wL7"/>
+                        <constraint firstAttribute="height" constant="30" id="Kr7-GR-wB5"/>
+                        <constraint firstAttribute="width" constant="30" id="UJP-sJ-rbS"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="Le8-8g-bkz">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="Le8-8g-bkz">
                     <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Le8-8g-bkz" secondAttribute="height" multiplier="1:1" id="1qU-BI-PPM"/>
+                        <constraint firstAttribute="height" constant="30" id="2JD-SJ-Km4"/>
+                        <constraint firstAttribute="width" constant="30" id="iRl-Rx-BUL"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="FFW-ZT-hLo">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="FFW-ZT-hLo">
                     <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="8rz-KQ-HXa"/>
+                        <constraint firstAttribute="width" secondItem="FFW-ZT-hLo" secondAttribute="height" multiplier="1:1" id="h4t-Hl-DpH"/>
+                        <constraint firstAttribute="height" constant="30" id="q1e-HK-Azb"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <accessibility key="accessibilityConfiguration">
                 <accessibilityTraits key="traits" notEnabled="YES"/>
             </accessibility>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FFW-ZT-hLo" secondAttribute="trailing" id="DCp-kT-hmA"/>
+                <constraint firstAttribute="bottom" secondItem="Le8-8g-bkz" secondAttribute="bottom" id="F2b-Aw-INa"/>
+                <constraint firstAttribute="bottom" secondItem="FFW-ZT-hLo" secondAttribute="bottom" id="FAl-jX-6ic"/>
+                <constraint firstItem="ehU-a5-A1h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="J1j-10-WKj"/>
+                <constraint firstItem="FFW-ZT-hLo" firstAttribute="leading" secondItem="Le8-8g-bkz" secondAttribute="trailing" id="KJf-Ir-V4F"/>
+                <constraint firstItem="Le8-8g-bkz" firstAttribute="leading" secondItem="ehU-a5-A1h" secondAttribute="trailing" id="KjZ-6u-aqA"/>
+                <constraint firstItem="Le8-8g-bkz" firstAttribute="leading" secondItem="ehU-a5-A1h" secondAttribute="trailing" id="MLe-nN-S4v"/>
+                <constraint firstItem="FFW-ZT-hLo" firstAttribute="leading" secondItem="Le8-8g-bkz" secondAttribute="trailing" id="T08-u2-bWb"/>
+                <constraint firstItem="Le8-8g-bkz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WmT-Iq-bLA"/>
+                <constraint firstItem="FFW-ZT-hLo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Yiq-WD-pRF"/>
+                <constraint firstItem="ehU-a5-A1h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="khp-Jl-1ea"/>
+                <constraint firstAttribute="bottom" secondItem="ehU-a5-A1h" secondAttribute="bottom" id="pHj-HU-ygR"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             <point key="canvasLocation" x="700" y="580"/>

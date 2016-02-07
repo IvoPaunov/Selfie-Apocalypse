@@ -12,13 +12,12 @@ import Parse
 class SupremeSelfieSlayersController: UIViewController, UITableViewDataSource {
 
     var supremeSlayers: [PFObject]?
+    let supremeSlayerCellIdentifier = "SupremeSlayerCell"
     
     @IBOutlet weak var tableViewSupremeSlayers: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewSupremeSlayers.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        // Do any additional setup after loading the view.
-        
+
         self.getSupremeSayers()
     }
 
@@ -29,16 +28,25 @@ class SupremeSelfieSlayersController: UIViewController, UITableViewDataSource {
     }
     
       func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return (self.supremeSlayers?.count)!
     }
     
        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let cell = self.getSupremeSlayerCell(indexPath)
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        return cell
+    }
+    
+    func getSupremeSlayerCell(indexPath: NSIndexPath) -> SupremeSlayerCell{
+        let cell = NSBundle.mainBundle()
+            .loadNibNamed(self.supremeSlayerCellIdentifier,
+                owner: nil,
+                options: nil)[0] as! SupremeSlayerCell
         
-        cell.textLabel!.text = (self.supremeSlayers![indexPath.row] as? Slayer)!.slayerName
+        cell.scoreLabel!.text = String((self.supremeSlayers![indexPath.row] as? Slayer)!.supremeScore)
+        
+        cell.nameLabel!.text = (self.supremeSlayers![indexPath.row] as? Slayer)!.slayerName
         
         return cell
     }
@@ -48,10 +56,6 @@ class SupremeSelfieSlayersController: UIViewController, UITableViewDataSource {
         super.init(coder: aDecoder)
         
     }
-    
-    
-    
- 
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         self.supremeSlayers = [Slayer]()
@@ -73,17 +77,12 @@ class SupremeSelfieSlayersController: UIViewController, UITableViewDataSource {
                 
             }
         }
-
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    func setupSupremeSlayersTable(){
+        tableViewSupremeSlayers
+            .registerClass(UITableViewCell.self, forCellReuseIdentifier: self.supremeSlayerCellIdentifier)
+        tableViewSupremeSlayers.rowHeight = UITableViewAutomaticDimension
+        tableViewSupremeSlayers.estimatedRowHeight = 56
+    }   
 }

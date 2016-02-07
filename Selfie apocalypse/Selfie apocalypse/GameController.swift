@@ -10,10 +10,8 @@ import AVFoundation
 import UIKit
 import Foundation
 
-
-
-class GameController: UIViewController, UIGestureRecognizerDelegate {
-    var utils = Utils()  
+class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlayerDelegate {
+    var utils = Utils()
     
     var currentSelfieZindex = HUGE
     var selfiesKilledCount = 0
@@ -23,6 +21,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     var currentSelfieReproductionInterval: Float = 3
     var selfies = Set<Selfie>()
     var loopHandler: NSTimer?
+    var isGameFinished = false
     
     var backGroundAudioPlayer: AVAudioPlayer?
     var selfieAudioPlayer: AVAudioPlayer?
@@ -30,6 +29,8 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     var axeAudioPlayer: AVAudioPlayer?
     var pikeAudioPlayer: AVAudioPlayer?
     var nunchakuAudioPlayer: AVAudioPlayer?
+    var cameraAudioPlayer: AVAudioPlayer?
+    var granadeAudioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var weaponForLastSelfieImageView: UIImageView!
     
@@ -53,6 +54,11 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        self.removeAudioPlayers()
     }
     
     func setupGestures(){
@@ -94,6 +100,9 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
             for selfie in afectedFelfies{
                 if selfie.selfieType == SelfieTipe.Pike_Susceptible {
                     self.slaySelfie(selfie)
+                    self.pikeAudioPlayer?.stop()
+                    self.pikeAudioPlayer?.currentTime = 0
+                    self.pikeAudioPlayer?.play()
                 }
             }
         }
@@ -116,6 +125,9 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
                 for selfie in afectedFelfies{
                     if selfie.selfieType == SelfieTipe.Nunchaku_Susceptible {
                         self.slaySelfie(selfie)
+                        self.batAudioPlayer?.stop()
+                        self.nunchakuAudioPlayer?.currentTime = 0
+                        self.nunchakuAudioPlayer?.play()
                     }
                 }
             }        }
@@ -133,6 +145,9 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
             for selfie in afectedFelfies{
                 if selfie.selfieType == SelfieTipe.Bat_Susceptible {
                     self.slaySelfie(selfie)
+                    self.batAudioPlayer?.stop()
+                    self.batAudioPlayer?.currentTime = 0
+                    self.batAudioPlayer?.play()
                 }
             }
         }
@@ -149,7 +164,10 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
             
             for selfie in afectedFelfies{
                 if selfie.selfieType == SelfieTipe.Axe_Susceptible {
-                      self.slaySelfie(selfie)
+                    self.slaySelfie(selfie)
+                    self.axeAudioPlayer?.stop()
+                    self.axeAudioPlayer?.currentTime = 0;
+                    self.axeAudioPlayer?.play()
                 }
             }
         }
@@ -158,14 +176,29 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func throwGranade(sender: AnyObject) {
-        let selfieCOntroller = self.storyboard?
-            .instantiateViewControllerWithIdentifier("SetSelfieController") as? SetSelfieController
         
-        selfieCOntroller?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-            self.presentViewController(selfieCOntroller!, animated: true, completion: nil)
+        self.isGameFinished = true
+        for selfie in self.selfies {
+            
+            selfie.layer.removeAllAnimations()
+        }
+        
+        self.backGroundAudioPlayer?.stop()
+        self.backGroundAudioPlayer = nil
+        
+        
+        //        let selfieCOntroller = self.storyboard?
+        //            .instantiateViewControllerWithIdentifier("SetSelfieController") as? SetSelfieController
+        //
+        //        selfieCOntroller?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        //            self.presentViewController(selfieCOntroller!, animated: true, completion: nil)
     }
     
     func  drawSelfie(){
+        
+        if self.isGameFinished {
+            return
+        }
         
         let selfie = Selfie()
         let randomX = CGFloat(arc4random_uniform(UInt32(UIScreen.mainScreen().bounds.width  - 100) + 50))
@@ -179,7 +212,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
         selfie.userInteractionEnabled = true
         --self.currentSelfieZindex
         self.selfies.insert(selfie)
-        self.view.addSubview(selfie)    
+        self.view.addSubview(selfie)
         self.animateSelfie(selfie)
         self.changeWeaponImage(selfie)
     }
@@ -210,9 +243,13 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
                     },
                     completion: { finish in
                         
-                        if self.absorbtionsTillDeath  >= 0{
+                        if self.isGameFinished {
+                            return
+                        }
                         
-                        self.absorbHeart(selfieToAnimate)
+                        if self.absorbtionsTillDeath  >= 0{
+                            
+                            self.absorbHeart(selfieToAnimate)
                         }
                 })
         })
@@ -240,10 +277,13 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
         let isAnimationOk = self.animateSelfieDeath(selfieToSlay)
         
         if isAnimationOk {
-        selfieToSlay.removeFromSuperview()
-        self.selfies.remove(selfieToSlay)
-        ++self.selfiesKilledCount
-        self.selfiesKilledLabel.text = String(self.selfiesKilledCount)
+            selfieToSlay.removeFromSuperview()
+            self.selfies.remove(selfieToSlay)
+            
+            if !self.isGameFinished {
+            ++self.selfiesKilledCount
+            self.selfiesKilledLabel.text = String(self.selfiesKilledCount)
+            }
         }
     }
     
@@ -262,7 +302,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
         
         if  selfieToAnimate.layer.presentationLayer() != nil{
             let currentSelfieSize = selfieToAnimate.layer.presentationLayer()!.frame.size
-            let currentSelfiePosition = selfieToAnimate.layer.presentationLayer()!.position
+            let currentSelfiePosition = ((selfieToAnimate.layer.presentationLayer()!) as! CALayer).position
             bombSpriteLayer.frame = CGRect(
                 x: currentSelfiePosition.x - (currentSelfieSize.width / 2),
                 y: currentSelfiePosition.y - (currentSelfieSize.height / 2),
@@ -283,11 +323,16 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     
     func absorbHeart(absorbBySelfie: Selfie){
         
-        
-        
         if(self.selfies.contains(absorbBySelfie as Selfie)){
             self.hearts.takeHeart()
-            --self.absorbtionsTillDeath            
+            --self.absorbtionsTillDeath
+            
+            self.selfies.remove(absorbBySelfie)
+            absorbBySelfie.layer.removeAllAnimations()
+            absorbBySelfie.removeFromSuperview()
+            self.cameraAudioPlayer?.play()
+            self.screenSelfieFlashAnimation()
+            
             
             if(self.absorbtionsTillDeath == 0){
                 
@@ -295,6 +340,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
                 self.loopHandler?.invalidate()
                 self.loopHandler = nil
                 
+                self.isGameFinished = true
                 self.handleGameOver()
             }
             
@@ -303,9 +349,22 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func gameLoop(){
+        
+        if self.isGameFinished {
+            self.loopHandler?.invalidate()
+            self.loopHandler = nil
+            return
+        }
+        
         self.loopHandler = self.utils.setInterval(
             NSTimeInterval(self.currentSelfieReproductionInterval),
             block: { () -> Void in
+                
+                if self.isGameFinished {
+                    self.loopHandler?.invalidate()
+                    self.loopHandler = nil
+                    return
+                }
                 
                 self.drawSelfie()
                 
@@ -339,7 +398,11 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
     func throwSomeGranage(){
         self.granades.throwGranade()
         
+        
+        self.setBaskgroundAudio()
+        
         if self.granadesLeft > 0 {
+            self.granadeAudioPlayer?.play()
             for selfie in self.selfies{
                 self.slaySelfie(selfie)
             }
@@ -359,13 +422,13 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
             image = UIImage(named: SelfieTipe.Pike_Susceptible.rawValue)!
         case SelfieTipe.Bat_Susceptible:
             color = UIColor.brownColor()
-               image = UIImage(named: SelfieTipe.Bat_Susceptible.rawValue)!
+            image = UIImage(named: SelfieTipe.Bat_Susceptible.rawValue)!
         case SelfieTipe.Axe_Susceptible:
             color = UIColor.blackColor()
-               image = UIImage(named: SelfieTipe.Axe_Susceptible.rawValue)!
+            image = UIImage(named: SelfieTipe.Axe_Susceptible.rawValue)!
         case SelfieTipe.Nunchaku_Susceptible:
             color = UIColor.grayColor()
-               image = UIImage(named: SelfieTipe.Nunchaku_Susceptible.rawValue)!
+            image = UIImage(named: SelfieTipe.Nunchaku_Susceptible.rawValue)!
         }
         
         self.weaponForLastSelfieImageView.image = image
@@ -384,36 +447,169 @@ class GameController: UIViewController, UIGestureRecognizerDelegate {
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: image)
-       
     }
     
     func handleGameOver(){
         
-//        self.loopHandler?.invalidate()
-//        self.loopHandler = nil
-//        for selfie in self.selfies{
-//            self.slaySelfie(selfie)
-//        }
-//        
-        self.view.layer.removeAllAnimations()
+        //        self.loopHandler?.invalidate()
+        //        self.loopHandler = nil
+        //        for selfie in self.selfies{
+        //            self.slaySelfie(selfie)
+        //        }
+        //
+        
         let gameOverController = self.storyboard?
             .instantiateViewControllerWithIdentifier("GameOverController") as? GameOverController
         gameOverController?.score = self.selfiesKilledCount
         
-        gameOverController?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.presentViewController(gameOverController!, animated: true, completion: nil)
+        self.utils.setTimeout(3, block: { () ->  Void in
+            
+            self.view.layer.removeAllAnimations()
+            
+            gameOverController?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+            self.presentViewController(gameOverController!, animated: true, completion: nil)
+            
+            })
     }
     
     func setupAudioPlayers(){
+    
+        self.setBaskgroundAudio()
         
-        if let backgraundAudioUrl = NSBundle.mainBundle().URLForResource("apocalypse",
+        if let batAudioUrl = NSBundle.mainBundle().URLForResource("bat",
+            withExtension: "mp3") {
+                self.batAudioPlayer = AVAudioPlayerPool.playerWithURL(batAudioUrl)
+                self.batAudioPlayer?.prepareToPlay()
+                self.batAudioPlayer?.volume = 0.7
+                self.batAudioPlayer?.numberOfLoops = 0
+        }
+        
+        if let axeAudioUrl = NSBundle.mainBundle().URLForResource("axe",
+            withExtension: "mp3") {
+                self.axeAudioPlayer = AVAudioPlayerPool.playerWithURL(axeAudioUrl)
+                self.axeAudioPlayer?.prepareToPlay()
+                self.axeAudioPlayer?.volume = 0.9
+                self.axeAudioPlayer?.numberOfLoops = 0
+        }
+        
+        if let pikeAudioUrl = NSBundle.mainBundle().URLForResource("pike",
+            withExtension: "mp3") {
+                self.pikeAudioPlayer = AVAudioPlayerPool.playerWithURL(pikeAudioUrl)
+                self.pikeAudioPlayer?.prepareToPlay()
+                self.pikeAudioPlayer?.volume = 0.7
+                self.pikeAudioPlayer?.numberOfLoops = 0
+        }
+        
+        if let nunAudioUrl = NSBundle.mainBundle().URLForResource("nun",
+            withExtension: "mp3") {
+                self.nunchakuAudioPlayer = AVAudioPlayerPool.playerWithURL(nunAudioUrl)
+                self.nunchakuAudioPlayer?.prepareToPlay()
+                self.nunchakuAudioPlayer?.volume = 0.7
+                self.nunchakuAudioPlayer?.numberOfLoops = 0
+        }
+        
+        if let cameraAudioUrl = NSBundle.mainBundle().URLForResource("camera",
+            withExtension: "mp3") {
+                self.cameraAudioPlayer = AVAudioPlayerPool.playerWithURL(cameraAudioUrl)
+                self.cameraAudioPlayer?.prepareToPlay()
+                self.cameraAudioPlayer?.volume = 1
+                self.cameraAudioPlayer?.numberOfLoops = 0
+        }
+        
+        if let granageAudioUrl = NSBundle.mainBundle().URLForResource("boom",
+            withExtension: "mp3") {
+                self.granadeAudioPlayer = AVAudioPlayerPool.playerWithURL(granageAudioUrl)
+                self.granadeAudioPlayer?.prepareToPlay()
+                self.granadeAudioPlayer?.volume = 1
+                self.granadeAudioPlayer?.numberOfLoops = 0
+        }
+    }
+    
+    func selfieDidMadeSelfie(selfie: Selfie){
+        
+    }
+    
+    func removeAudioPlayers(){
+        
+        if ((self.backGroundAudioPlayer) != nil) {
+            self.backGroundAudioPlayer?.stop()
+            self.backGroundAudioPlayer = nil
+        }
+        
+        if ((self.batAudioPlayer) != nil) {
+            self.batAudioPlayer?.stop()
+            self.batAudioPlayer = nil
+        }
+        
+        if ((self.axeAudioPlayer) != nil) {
+            self.axeAudioPlayer?.stop()
+            self.axeAudioPlayer = nil
+        }
+        
+        if ((self.pikeAudioPlayer) != nil) {
+            self.pikeAudioPlayer?.stop()
+            self.pikeAudioPlayer = nil
+        }
+        
+        if ((self.nunchakuAudioPlayer) != nil) {
+            self.nunchakuAudioPlayer?.stop()
+            self.nunchakuAudioPlayer = nil
+        }
+        
+        if ((self.cameraAudioPlayer) != nil) {
+            self.cameraAudioPlayer?.stop()
+            self.cameraAudioPlayer = nil
+        }
+        
+        if ((self.granadeAudioPlayer) != nil) {
+            self.granadeAudioPlayer?.stop()
+            self.granadeAudioPlayer = nil
+        }
+    }
+    
+    func setBaskgroundAudio(){
+        if self.backGroundAudioPlayer != nil {
+            self.backGroundAudioPlayer?.stop()
+            self.backGroundAudioPlayer = nil
+        }
+        
+        let randomNumber = arc4random_uniform(UInt32(4)) + 1
+        
+        let baskgroundAudio = "background-\(randomNumber)"
+        
+        if let backgraundAudioUrl = NSBundle.mainBundle().URLForResource(baskgroundAudio,
             withExtension: "mp3") {
                 self.backGroundAudioPlayer = AVAudioPlayerPool.playerWithURL(backgraundAudioUrl)
                 self.backGroundAudioPlayer?.prepareToPlay()
                 self.backGroundAudioPlayer?.volume = 0.3
-                self.backGroundAudioPlayer?.numberOfLoops = 99
+                self.backGroundAudioPlayer?.numberOfLoops = 0
+                self.batAudioPlayer?.delegate = self
                 self.backGroundAudioPlayer?.play()
-        } 
+        }
+    }
+    
+    func screenSelfieFlashAnimation() {
+        
+        let flashView = UIView(frame: self.view.frame)
+        flashView.backgroundColor = UIColor.whiteColor()
+        flashView.layer.zPosition = CGFloat(HUGE) + CGFloat(1.0)
+        self.view.addSubview(flashView)
+        
+        UIView.animateWithDuration(1.3, delay: 0,
+            options: UIViewAnimationOptions.CurveEaseInOut,
+            animations: { () -> Void in
+                
+            flashView.alpha = 0.0
+                
+            }, completion: { (done) -> Void in
+                
+                flashView.removeFromSuperview()
+        })
+    }
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        
+        self.setBaskgroundAudio()
     }
     
     //    func gestureRecognizer(_: UIGestureRecognizer,

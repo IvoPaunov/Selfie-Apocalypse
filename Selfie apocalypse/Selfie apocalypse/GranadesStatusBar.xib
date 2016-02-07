@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GranadesStatusBar" customModule="Selfie_apocalypse" customModuleProvider="target">
@@ -18,23 +19,59 @@
             <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-ae-Qkj">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-ae-Qkj">
                     <rect key="frame" x="70" y="0.0" width="20" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4Kn-if-QQe"/>
+                        <constraint firstAttribute="width" secondItem="O3M-ae-Qkj" secondAttribute="height" multiplier="2:3" id="NvK-em-4AM"/>
+                        <constraint firstAttribute="width" constant="20" id="OxK-6p-bfg"/>
+                    </constraints>
                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="TyW-0F-FZ2">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="TyW-0F-FZ2">
                     <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="TyW-0F-FZ2" secondAttribute="height" multiplier="2:3" id="Gl9-Gn-cER"/>
+                        <constraint firstAttribute="height" constant="30" id="JJR-NP-L5P"/>
+                        <constraint firstAttribute="width" constant="20" id="Ukc-Ka-syS"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="CBS-eQ-iGF">
+                <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Granade" translatesAutoresizingMaskIntoConstraints="NO" id="CBS-eQ-iGF">
                     <rect key="frame" x="35" y="0.0" width="20" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="1DE-y6-r9f"/>
+                        <constraint firstAttribute="width" constant="20" id="LKQ-V4-Ke8"/>
+                        <constraint firstAttribute="width" secondItem="CBS-eQ-iGF" secondAttribute="height" multiplier="2:3" id="Mej-MN-xbW"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofv-cq-Nps">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofv-cq-Nps">
                     <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4mO-Ed-l9Q"/>
+                        <constraint firstAttribute="width" constant="90" id="EJp-li-HLP"/>
+                        <constraint firstAttribute="width" secondItem="Ofv-cq-Nps" secondAttribute="height" multiplier="3:1" id="JVm-7s-xSd"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" red="0.49179892015706805" green="0.057634670762159258" blue="0.1492354224508653" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="CBS-eQ-iGF" secondAttribute="bottom" id="4kN-MB-tTg"/>
+                <constraint firstItem="O3M-ae-Qkj" firstAttribute="leading" secondItem="CBS-eQ-iGF" secondAttribute="trailing" constant="15" id="5tL-EK-ve6"/>
+                <constraint firstItem="CBS-eQ-iGF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fmd-uP-SRY"/>
+                <constraint firstItem="O3M-ae-Qkj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MGC-zJ-yFL"/>
+                <constraint firstItem="Ofv-cq-Nps" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SIk-6G-Zj2"/>
+                <constraint firstAttribute="bottom" secondItem="TyW-0F-FZ2" secondAttribute="bottom" id="Vh4-hD-Srn"/>
+                <constraint firstAttribute="bottom" secondItem="Ofv-cq-Nps" secondAttribute="bottom" id="Vnv-fO-XdQ"/>
+                <constraint firstItem="TyW-0F-FZ2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZQZ-RW-sIc"/>
+                <constraint firstAttribute="trailing" secondItem="Ofv-cq-Nps" secondAttribute="trailing" id="bV1-nY-tQB"/>
+                <constraint firstAttribute="bottom" secondItem="O3M-ae-Qkj" secondAttribute="bottom" id="eWH-I5-j2H"/>
+                <constraint firstItem="TyW-0F-FZ2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iAR-aa-xxR"/>
+                <constraint firstItem="Ofv-cq-Nps" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oNr-Rb-OZq"/>
+                <constraint firstItem="CBS-eQ-iGF" firstAttribute="leading" secondItem="TyW-0F-FZ2" secondAttribute="trailing" constant="15" id="vyA-ZF-7uH"/>
+                <constraint firstAttribute="trailing" secondItem="O3M-ae-Qkj" secondAttribute="trailing" id="zAG-52-XL1"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             <point key="canvasLocation" x="594" y="480"/>
