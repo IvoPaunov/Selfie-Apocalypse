@@ -20,8 +20,6 @@
 		856F0D4C1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D4B1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift */; };
 		856F0D4E1C677F800079E46D /* SupremeSlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D4D1C677F800079E46D /* SupremeSlayerCell.swift */; };
 		856F0D501C677FF10079E46D /* SupremeSlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */; };
-		856F0D541C678E220079E46D /* 8bit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D521C678E220079E46D /* 8bit.ttf */; };
-		856F0D551C678E220079E46D /* CrimesTimesSix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D531C678E220079E46D /* CrimesTimesSix.ttf */; };
 		856F0D571C6790BB0079E46D /* PixelOperatorMono8.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D561C6790BB0079E46D /* PixelOperatorMono8.ttf */; };
 		856F0D591C67912C0079E46D /* PixelOperator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D581C67912C0079E46D /* PixelOperator.ttf */; };
 		856F0D731C67AE170079E46D /* DCBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D5D1C67AE170079E46D /* DCBaseButton.swift */; };
@@ -43,11 +41,6 @@
 		856F0D831C67AE170079E46D /* DCDashedBorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D711C67AE170079E46D /* DCDashedBorderedView.swift */; };
 		856F0D841C67AE170079E46D /* DCHairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D721C67AE170079E46D /* DCHairlineView.swift */; };
 		856F0D861C67BD460079E46D /* Exrensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D851C67BD460079E46D /* Exrensions.swift */; };
-		856F0D8C1C67DC530079E46D /* selfie-sprite-brown.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D881C67DC530079E46D /* selfie-sprite-brown.pdf */; };
-		856F0D8D1C67DC530079E46D /* selfie-sprite-gray.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D891C67DC530079E46D /* selfie-sprite-gray.pdf */; };
-		856F0D8E1C67DC530079E46D /* selfie-sprite-yellow.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D8A1C67DC530079E46D /* selfie-sprite-yellow.pdf */; };
-		856F0D921C67E41B0079E46D /* selfie-sprite-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D911C67E41B0079E46D /* selfie-sprite-black.png */; };
-		856F0D941C67E9E70079E46D /* selfie-sprite-black-cut.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D931C67E9E70079E46D /* selfie-sprite-black-cut.png */; };
 		856F0D961C67EE0E0079E46D /* selfie-torso-sprite-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D951C67EE0E0079E46D /* selfie-torso-sprite-black.png */; };
 		856F0D9A1C67F0320079E46D /* selfie-torso-sprite-brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D971C67F0320079E46D /* selfie-torso-sprite-brown.png */; };
 		856F0D9B1C67F0320079E46D /* selfie-torso-sprite-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D981C67F0320079E46D /* selfie-torso-sprite-gray.png */; };
@@ -63,8 +56,8 @@
 		85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B661C61193A0087E258 /* GranadesStatusBar.swift */; };
 		85791B6D1C61589D0087E258 /* bang-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85791B6C1C61589D0087E258 /* bang-sprite.png */; };
 		85913CCD1C638CA00001F8F1 /* Selfie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85913CCC1C638CA00001F8F1 /* Selfie.swift */; };
+		85B898F61C682E2000B28D4A /* selfie-bang-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85B898F51C682E2000B28D4A /* selfie-bang-sprite.png */; };
 		85C579CE1C64DA6800C7002A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C579CD1C64DA6800C7002A /* Utils.swift */; };
-		85C579D01C64EE0500C7002A /* selfie-bang-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C579CF1C64EE0500C7002A /* selfie-bang-sprite.png */; };
 		85D1B29C1C6619A0005DC10B /* SupremeSelfieSlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1B29B1C6619A0005DC10B /* SupremeSelfieSlayersController.swift */; };
 		85D1B29E1C6619BD005DC10B /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1B29D1C6619BD005DC10B /* GameOverController.swift */; };
 		85D1B2A21C664E94005DC10B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D1B29F1C664E94005DC10B /* Bolts.framework */; };
@@ -113,8 +106,6 @@
 		856F0D4B1C6761CE0079E46D /* SelfieSalyingWeaponDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfieSalyingWeaponDescription.swift; sourceTree = "<group>"; };
 		856F0D4D1C677F800079E46D /* SupremeSlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupremeSlayerCell.swift; sourceTree = "<group>"; };
 		856F0D4F1C677FF10079E46D /* SupremeSlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupremeSlayerCell.xib; sourceTree = "<group>"; };
-		856F0D521C678E220079E46D /* 8bit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bit.ttf; sourceTree = "<group>"; };
-		856F0D531C678E220079E46D /* CrimesTimesSix.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CrimesTimesSix.ttf; sourceTree = "<group>"; };
 		856F0D561C6790BB0079E46D /* PixelOperatorMono8.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelOperatorMono8.ttf; sourceTree = "<group>"; };
 		856F0D581C67912C0079E46D /* PixelOperator.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PixelOperator.ttf; sourceTree = "<group>"; };
 		856F0D5B1C67AE170079E46D /* DCKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCKit.h; sourceTree = "<group>"; };
@@ -137,11 +128,6 @@
 		856F0D711C67AE170079E46D /* DCDashedBorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCDashedBorderedView.swift; sourceTree = "<group>"; };
 		856F0D721C67AE170079E46D /* DCHairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCHairlineView.swift; sourceTree = "<group>"; };
 		856F0D851C67BD460079E46D /* Exrensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exrensions.swift; sourceTree = "<group>"; };
-		856F0D881C67DC530079E46D /* selfie-sprite-brown.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "selfie-sprite-brown.pdf"; sourceTree = "<group>"; };
-		856F0D891C67DC530079E46D /* selfie-sprite-gray.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "selfie-sprite-gray.pdf"; sourceTree = "<group>"; };
-		856F0D8A1C67DC530079E46D /* selfie-sprite-yellow.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "selfie-sprite-yellow.pdf"; sourceTree = "<group>"; };
-		856F0D911C67E41B0079E46D /* selfie-sprite-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-sprite-black.png"; sourceTree = "<group>"; };
-		856F0D931C67E9E70079E46D /* selfie-sprite-black-cut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-sprite-black-cut.png"; sourceTree = "<group>"; };
 		856F0D951C67EE0E0079E46D /* selfie-torso-sprite-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-torso-sprite-black.png"; sourceTree = "<group>"; };
 		856F0D971C67F0320079E46D /* selfie-torso-sprite-brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-torso-sprite-brown.png"; sourceTree = "<group>"; };
 		856F0D981C67F0320079E46D /* selfie-torso-sprite-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-torso-sprite-gray.png"; sourceTree = "<group>"; };
@@ -157,8 +143,8 @@
 		85791B661C61193A0087E258 /* GranadesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GranadesStatusBar.swift; sourceTree = "<group>"; };
 		85791B6C1C61589D0087E258 /* bang-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bang-sprite.png"; sourceTree = "<group>"; };
 		85913CCC1C638CA00001F8F1 /* Selfie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selfie.swift; sourceTree = "<group>"; };
+		85B898F51C682E2000B28D4A /* selfie-bang-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-bang-sprite.png"; sourceTree = "<group>"; };
 		85C579CD1C64DA6800C7002A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		85C579CF1C64EE0500C7002A /* selfie-bang-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-bang-sprite.png"; sourceTree = "<group>"; };
 		85D1B29B1C6619A0005DC10B /* SupremeSelfieSlayersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupremeSelfieSlayersController.swift; sourceTree = "<group>"; };
 		85D1B29D1C6619BD005DC10B /* GameOverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 		85D1B29F1C664E94005DC10B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
@@ -293,8 +279,6 @@
 			children = (
 				856F0D581C67912C0079E46D /* PixelOperator.ttf */,
 				856F0D561C6790BB0079E46D /* PixelOperatorMono8.ttf */,
-				856F0D521C678E220079E46D /* 8bit.ttf */,
-				856F0D531C678E220079E46D /* CrimesTimesSix.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -377,16 +361,11 @@
 		85752F9C1C62470D00F38513 /* SpritesAssets */ = {
 			isa = PBXGroup;
 			children = (
+				85B898F51C682E2000B28D4A /* selfie-bang-sprite.png */,
 				856F0D971C67F0320079E46D /* selfie-torso-sprite-brown.png */,
 				856F0D981C67F0320079E46D /* selfie-torso-sprite-gray.png */,
 				856F0D991C67F0320079E46D /* selfie-torso-sprite-yellow.png */,
 				856F0D951C67EE0E0079E46D /* selfie-torso-sprite-black.png */,
-				856F0D931C67E9E70079E46D /* selfie-sprite-black-cut.png */,
-				856F0D911C67E41B0079E46D /* selfie-sprite-black.png */,
-				856F0D881C67DC530079E46D /* selfie-sprite-brown.pdf */,
-				856F0D891C67DC530079E46D /* selfie-sprite-gray.pdf */,
-				856F0D8A1C67DC530079E46D /* selfie-sprite-yellow.pdf */,
-				85C579CF1C64EE0500C7002A /* selfie-bang-sprite.png */,
 				85752FD41C62A84C00F38513 /* hearts-sprite.png */,
 				85791B6C1C61589D0087E258 /* bang-sprite.png */,
 			);
@@ -567,20 +546,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				856F0D8C1C67DC530079E46D /* selfie-sprite-brown.pdf in Resources */,
 				85791B6D1C61589D0087E258 /* bang-sprite.png in Resources */,
 				85D1B2CB1C669576005DC10B /* camera.mp3 in Resources */,
 				856F0D501C677FF10079E46D /* SupremeSlayerCell.xib in Resources */,
-				856F0D8E1C67DC530079E46D /* selfie-sprite-yellow.pdf in Resources */,
 				856F0D9A1C67F0320079E46D /* selfie-torso-sprite-brown.png in Resources */,
 				85D75EFC1C66D44D0016CD24 /* background-2.mp3 in Resources */,
 				856F0D9B1C67F0320079E46D /* selfie-torso-sprite-gray.png in Resources */,
+				85B898F61C682E2000B28D4A /* selfie-bang-sprite.png in Resources */,
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
 				856F0DA11C6801DB0079E46D /* the-true-story.txt in Resources */,
 				85D75EFD1C66D44D0016CD24 /* background-3.mp3 in Resources */,
-				856F0D551C678E220079E46D /* CrimesTimesSix.ttf in Resources */,
 				85D75EF61C66C2990016CD24 /* boom.mp3 in Resources */,
-				85C579D01C64EE0500C7002A /* selfie-bang-sprite.png in Resources */,
 				85D1B2CD1C669576005DC10B /* pike.mp3 in Resources */,
 				85D75EF41C66C2210016CD24 /* self-over.mp3 in Resources */,
 				85D75EF01C66C2070016CD24 /* nun.mp3 in Resources */,
@@ -589,14 +565,10 @@
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
 				856F0D441C67425A0079E46D /* HowToSlayCell.xib in Resources */,
 				856F0D961C67EE0E0079E46D /* selfie-torso-sprite-black.png in Resources */,
-				856F0D541C678E220079E46D /* 8bit.ttf in Resources */,
-				856F0D8D1C67DC530079E46D /* selfie-sprite-gray.pdf in Resources */,
 				856F0D571C6790BB0079E46D /* PixelOperatorMono8.ttf in Resources */,
-				856F0D921C67E41B0079E46D /* selfie-sprite-black.png in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
 				85D75EFB1C66D44D0016CD24 /* background-1.mp3 in Resources */,
 				856F0D591C67912C0079E46D /* PixelOperator.ttf in Resources */,
-				856F0D941C67E9E70079E46D /* selfie-sprite-black-cut.png in Resources */,
 				85D1B2C91C669576005DC10B /* axe.mp3 in Resources */,
 				85791B641C6118080087E258 /* GranadesStatusBar.xib in Resources */,
 				85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */,

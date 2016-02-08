@@ -85,25 +85,21 @@ class Selfie: UIView {
         
         let torsoSprite = self.initTorsoSpriteLayer(spriteColor!)
         
-        let x = CGFloat( 0) //selfieHead.layer.position.x / 2
+        let x = CGFloat(0)
         let y = (selfieHead.layer.position.y + selfieHead.frame.size.height ) / 1.75
         let width = selfieHead.frame.size.width
         let height = width
         
         torsoSprite.frame = CGRect(x: x, y: y, width: width, height:height)
-        
-        torsoSprite.playAnimationAgain()
+       
         torsoSprite.zPosition = selfieHead.layer.zPosition - 1
         
         self.addSubview(selfieHead)
         self.layer.addSublayer(torsoSprite)
+        torsoSprite.playAnimationAgain()
     }
     
-    
     private func initTorsoSpriteLayer(color: String) -> SpriteLayerC{
-        
-        
-        
         
         let sprite = UIImage(named: "selfie-torso-sprite-\(color).png")
         let size = CGSize(width: 125, height: 110)
@@ -113,7 +109,7 @@ class Selfie: UIView {
             sampleSize: size,
             animationFrameStart: 1,
             animationFrameEnd: 177,
-            animationDuration: 5,
+            animationDuration: 7,
             lanimationRepeatCount: 20)
         
         return torsoSpriteLayer

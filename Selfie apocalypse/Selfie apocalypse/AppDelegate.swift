@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "Tmavp6jYtiacK0qnp33Dtv4NHfyuL9q15z047wU4")
         
         // [Optional] Track statistics around application opens.
-        //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         
         return true
@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        
+        AVAudioPlayerPool.stopAllAudioPlayers()
     }
 
     func applicationDidEnterBackground(application: UIApplication) {

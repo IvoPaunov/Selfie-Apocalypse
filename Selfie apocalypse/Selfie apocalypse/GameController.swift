@@ -13,7 +13,7 @@ import Foundation
 class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlayerDelegate {
     var utils = Utils()
     
-    var currentSelfieZindex = HUGE
+    var currentSelfieZindex = 1000000000
     var selfiesKilledCount = 0
     var absorbtionsTillDeath = 3
     var granadesLeft = 3
@@ -53,7 +53,6 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -188,10 +187,11 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
         let frame = CGRectMake(randomX, randomY, randomY, randomY)
         selfie.frame = frame
         selfie.backgroundColor = UIColor.clearColor()
-        selfie.layer.zPosition = CGFloat(currentSelfieZindex)
+
+        selfie.layer.zPosition = CGFloat(self.currentSelfieZindex)
+        self.currentSelfieZindex -= 1 //Float(((self.selfiesKilledCount + self.selfies.count) * 50) + 2)
         selfie.alpha = 0
         selfie.userInteractionEnabled = true
-        --self.currentSelfieZindex
         self.selfies.insert(selfie)
         self.view.addSubview(selfie)
         self.animateSelfie(selfie)
@@ -219,8 +219,8 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
                         selfieToAnimate.alpha = 1
                         selfieToAnimate.transform = CGAffineTransformMakeScale(5, 5)
                         selfieToAnimate.layer.position.y = CGFloat(screenWidth.size.height + 100)
-                        let randmX = CGFloat(arc4random_uniform(UInt32(width + 50)))
-                        selfieToAnimate.layer.position.x = randmX - 25
+                        let randmX = CGFloat(arc4random_uniform(UInt32(width + 30)))
+                        selfieToAnimate.layer.position.x = randmX - 15
                     },
                     completion: { finish in
                         
@@ -434,10 +434,9 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
         
         self.loopHandler?.invalidate()
         self.loopHandler = nil
-        for selfie in self.selfies{
-            self.slaySelfie(selfie)
-        }
-        
+//        for selfie in self.selfies{
+//            self.slaySelfie(selfie)
+//        }
         
         let gameOverController = self.storyboard?
             .instantiateViewControllerWithIdentifier("GameOverController") as? GameOverController
@@ -449,7 +448,6 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
             
             gameOverController?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
             self.presentViewController(gameOverController!, animated: true, completion: nil)
-            
         })
     }
     
@@ -551,7 +549,6 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
     func setBaskgroundAudio(){
         self.backGroundAudioPlayer?.stop()
         self.backGroundAudioPlayer = nil
-        
         
         let randomNumber = arc4random_uniform(UInt32(4)) + 1
         

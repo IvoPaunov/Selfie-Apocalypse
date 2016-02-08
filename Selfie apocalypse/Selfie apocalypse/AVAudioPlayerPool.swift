@@ -45,4 +45,10 @@ class AVAudioPlayerPool: NSObject {
             
         }
     }
+    
+    class func stopAllAudioPlayers(){
+        for player in players {
+            player.stop()
+        }
+    }
 }
