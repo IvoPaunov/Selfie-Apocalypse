@@ -10,6 +10,8 @@ import UIKit
 
 class SelfieSlayingSchoolController: UIViewController, UITableViewDataSource {
     
+    let transitionManager = TransitionManager()
+    
     var weapons = [SelfieSalyingWeaponDescription]()
     let weaponCellIdentifier = "WeaponCell"
     
@@ -110,5 +112,12 @@ class SelfieSlayingSchoolController: UIViewController, UITableViewDataSource {
         weaponsTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: weaponCellIdentifier)
         weaponsTable.rowHeight = UITableViewAutomaticDimension
         weaponsTable.estimatedRowHeight = 220
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let toViewController = segue.destinationViewController as UIViewController
+        self.transitionManager.toLeft = false
+        
+        toViewController.transitioningDelegate = self.transitionManager
     }
 }

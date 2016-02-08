@@ -11,6 +11,8 @@ import AVFoundation
 
 class GameOverController: UIViewController {
     
+    let transitionManager = TransitionManager()
+    
     var score: Int?
     var selfOverAudioPlayer: AVAudioPlayer?
     
@@ -50,12 +52,11 @@ class GameOverController: UIViewController {
             
             
             if slayerSupremeScore! > currentScore{
-                
-                self.labelText.text = "Nice but not your supreme!"
+                self.labelText.text = "NICE BUT NOT YOUR SUPREME SCORE!\n(\(slayerSupremeScore!))"
                 self.labelScore.text = "\(currentScore)"
             }
             else{
-                self.labelText.text = "WOW this is youe supreme score!"
+                self.labelText.text = "WOW THIS IS YOUR SUPREME SCORE!"
                 self.labelScore.text = "\(currentScore)"
                 
                 defaults.setValue(self.score, forKey: DefaultKeys.Player_Top_Score.rawValue)
@@ -105,5 +106,11 @@ class GameOverController: UIViewController {
             self.selfOverAudioPlayer?.stop()
             self.selfOverAudioPlayer = nil
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let toViewController = segue.destinationViewController as UIViewController
+        
+        toViewController.transitioningDelegate = self.transitionManager
     }
 }

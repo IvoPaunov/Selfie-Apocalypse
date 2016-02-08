@@ -52,6 +52,10 @@
 		856F0D9A1C67F0320079E46D /* selfie-torso-sprite-brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D971C67F0320079E46D /* selfie-torso-sprite-brown.png */; };
 		856F0D9B1C67F0320079E46D /* selfie-torso-sprite-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D981C67F0320079E46D /* selfie-torso-sprite-gray.png */; };
 		856F0D9C1C67F0320079E46D /* selfie-torso-sprite-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 856F0D991C67F0320079E46D /* selfie-torso-sprite-yellow.png */; };
+		856F0D9E1C67FFDD0079E46D /* TheTrueStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0D9D1C67FFDC0079E46D /* TheTrueStoryViewController.swift */; };
+		856F0DA11C6801DB0079E46D /* the-true-story.txt in Resources */ = {isa = PBXBuildFile; fileRef = 856F0DA01C6801DB0079E46D /* the-true-story.txt */; };
+		856F0DA31C6805830079E46D /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0DA21C6805830079E46D /* TransitionManager.swift */; };
+		856F0DA51C6808100079E46D /* SelfMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0DA41C6808100079E46D /* SelfMenuController.swift */; };
 		85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85752FD41C62A84C00F38513 /* hearts-sprite.png */; };
 		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
@@ -142,6 +146,10 @@
 		856F0D971C67F0320079E46D /* selfie-torso-sprite-brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-torso-sprite-brown.png"; sourceTree = "<group>"; };
 		856F0D981C67F0320079E46D /* selfie-torso-sprite-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-torso-sprite-gray.png"; sourceTree = "<group>"; };
 		856F0D991C67F0320079E46D /* selfie-torso-sprite-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selfie-torso-sprite-yellow.png"; sourceTree = "<group>"; };
+		856F0D9D1C67FFDC0079E46D /* TheTrueStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheTrueStoryViewController.swift; sourceTree = "<group>"; };
+		856F0DA01C6801DB0079E46D /* the-true-story.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "the-true-story.txt"; sourceTree = "<group>"; };
+		856F0DA21C6805830079E46D /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		856F0DA41C6808100079E46D /* SelfMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfMenuController.swift; sourceTree = "<group>"; };
 		85752FD41C62A84C00F38513 /* hearts-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-sprite.png"; sourceTree = "<group>"; };
 		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 		8545B4B31C609F25008F2624 /* Selfie apocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				856F0D9F1C6801CB0079E46D /* Texts */,
 				856F0D511C678D800079E46D /* Fonts */,
 				85D1B2C11C6694CC005DC10B /* AudioFiles */,
 				85D1B2BA1C6650CD005DC10B /* Models */,
@@ -357,6 +366,14 @@
 			path = UIViews;
 			sourceTree = "<group>";
 		};
+		856F0D9F1C6801CB0079E46D /* Texts */ = {
+			isa = PBXGroup;
+			children = (
+				856F0DA01C6801DB0079E46D /* the-true-story.txt */,
+			);
+			name = Texts;
+			sourceTree = "<group>";
+		};
 		85752F9C1C62470D00F38513 /* SpritesAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +442,7 @@
 				85C579CD1C64DA6800C7002A /* Utils.swift */,
 				85D1B2BD1C665390005DC10B /* ParseService.swift */,
 				85D1B2BF1C669246005DC10B /* AVAudioPlayerPool.swift */,
+				856F0DA21C6805830079E46D /* TransitionManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -437,6 +455,8 @@
 				85D1B29B1C6619A0005DC10B /* SupremeSelfieSlayersController.swift */,
 				85D1B29D1C6619BD005DC10B /* GameOverController.swift */,
 				856F0D491C6760800079E46D /* SelfieSlayingSchoolController.swift */,
+				856F0D9D1C67FFDC0079E46D /* TheTrueStoryViewController.swift */,
+				856F0DA41C6808100079E46D /* SelfMenuController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -556,6 +576,7 @@
 				85D75EFC1C66D44D0016CD24 /* background-2.mp3 in Resources */,
 				856F0D9B1C67F0320079E46D /* selfie-torso-sprite-gray.png in Resources */,
 				8545B4BF1C609F25008F2624 /* LaunchScreen.storyboard in Resources */,
+				856F0DA11C6801DB0079E46D /* the-true-story.txt in Resources */,
 				85D75EFD1C66D44D0016CD24 /* background-3.mp3 in Resources */,
 				856F0D551C678E220079E46D /* CrimesTimesSix.ttf in Resources */,
 				85D75EF61C66C2990016CD24 /* boom.mp3 in Resources */,
@@ -594,6 +615,7 @@
 				856F0D7C1C67AE170079E46D /* DCPickerTextField.swift in Sources */,
 				856F0D7E1C67AE170079E46D /* DCBorderedTextView.swift in Sources */,
 				85791B671C61193A0087E258 /* GranadesStatusBar.swift in Sources */,
+				856F0DA31C6805830079E46D /* TransitionManager.swift in Sources */,
 				856F0D821C67AE170079E46D /* DCCircleView.swift in Sources */,
 				856F0D831C67AE170079E46D /* DCDashedBorderedView.swift in Sources */,
 				856F0D4A1C6760800079E46D /* SelfieSlayingSchoolController.swift in Sources */,
@@ -603,6 +625,7 @@
 				85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */,
 				85D1B29E1C6619BD005DC10B /* GameOverController.swift in Sources */,
 				856F0D801C67AE170079E46D /* DCBaseView.swift in Sources */,
+				856F0D9E1C67FFDD0079E46D /* TheTrueStoryViewController.swift in Sources */,
 				85D1B2BC1C665106005DC10B /* Slayer.swift in Sources */,
 				8545B4B71C609F25008F2624 /* GameController.swift in Sources */,
 				85E7D1A91C62314100B2BC82 /* SpriteLayerC.m in Sources */,
@@ -627,6 +650,7 @@
 				85D1B2BE1C665390005DC10B /* ParseService.swift in Sources */,
 				856F0D771C67AE170079E46D /* DCBaseTextField.swift in Sources */,
 				85C579CE1C64DA6800C7002A /* Utils.swift in Sources */,
+				856F0DA51C6808100079E46D /* SelfMenuController.swift in Sources */,
 				856F0D741C67AE170079E46D /* DCBorderedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

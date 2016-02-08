@@ -13,6 +13,10 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
 
     @IBOutlet weak var inageView: UIImageView!
     
+    @IBOutlet weak var slayerNameTextBox: DCBorderedTextField!
+    
+    let transitionManager = TransitionManager()    
+    
      let defaults = NSUserDefaults.standardUserDefaults()
      var imagePicker = UIImagePickerController()
      let utils = Utils()
@@ -24,14 +28,13 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         imagePicker.delegate = self
         
         setupUmageView()
-        
-     //   parseService.addOrUpdeteSlayerInfo("Gosho", supremeScore: 200)
+        setSlayerName()
     }
     
-//    override func viewWillDisappear(animated: Bool) {
-//        
-//        self.removeAudioPlayers()
-//    }
+    override func viewWillDisappear(animated: Bool) {
+        
+        self.updateSlayerName()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -46,12 +49,8 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         presentViewController(self.imagePicker,
             animated: true,
             completion: nil)
-//        
-//        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-//        presentViewController(imagePicker, animated: true, completion: nil)
-//        
-        
     }
+    
     @IBAction func selectSelfieFromCamera(sender: UIButton) {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Front) != nil {
             self.imagePicker.allowsEditing = true
@@ -141,11 +140,46 @@ class SetSelfieController: UIViewController, UINavigationControllerDelegate, UII
         self.setCitcularImageView()
     }
     
+    func updateSlayerName(){
+        var nameInBox = self.slayerNameTextBox.text
+        
+        if nameInBox != nil {
+            
+            nameInBox = nameInBox?.trim()
+            
+            let currentSlayerName = defaults.stringForKey(DefaultKeys.Slayer_Name.rawValue)
+            
+            if currentSlayerName == nameInBox{
+                return
+            }
+            else {
+                let parseService = ParseService()
+                defaults.setValue(nameInBox, forKey: DefaultKeys.Slayer_Name.rawValue)
+                parseService.addOrUpdeteSlayerInfo(nameInBox, supremeScore: nil)              
+            }
+        }
+    }
+    
+    func setSlayerName(){
+          let currentSlayerName = defaults.stringForKey(DefaultKeys.Slayer_Name.rawValue)
+        
+        if currentSlayerName != nil {
+            self.slayerNameTextBox.text = currentSlayerName
+        }
+    }
+    
     func setCitcularImageView(){
         self.inageView.contentMode = .ScaleAspectFit
         self.inageView.layer.cornerRadius = self.inageView.layer.frame.height / 2
         self.inageView.clipsToBounds = true;
-        self.inageView.layer.borderWidth = 3
-        self.inageView.layer.borderColor = UIColor.whiteColor().CGColor
+        self.inageView.layer.borderWidth = 5
+        self.inageView.layer.borderColor = UIColor.init(red: 214.0/255.0, green: 255.0/255.0, blue: 104/255.0, alpha: 1.0).CGColor
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let toViewController = segue.destinationViewController as UIViewController
+        self.transitionManager.toLeft = false
+        
+        toViewController.transitioningDelegate = self.transitionManager
     }
 }

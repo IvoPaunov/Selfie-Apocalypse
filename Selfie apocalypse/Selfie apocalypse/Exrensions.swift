@@ -19,3 +19,11 @@ extension UIColor
         self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
     }
 }
+
+extension String
+{
+    func trim() -> String
+    {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
+}

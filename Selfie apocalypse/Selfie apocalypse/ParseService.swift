@@ -38,7 +38,7 @@ class ParseService {
         var currentSlayerName: String?
         
         if newSlayerName == nil {
-            currentSlayerName = defaults.stringForKey(DefaultKeys.Slayer_Parse_Id.rawValue)
+            currentSlayerName = defaults.stringForKey(DefaultKeys.Slayer_Name.rawValue)
             
             if currentSlayerName == nil {
                 currentSlayerName = "Slayer-" + NSUUID().UUIDString

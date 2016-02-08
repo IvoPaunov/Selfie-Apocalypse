@@ -10,6 +10,8 @@ import UIKit
 import Parse
 
 class SupremeSelfieSlayersController: UIViewController, UITableViewDataSource {
+    
+    let transitionManager = TransitionManager()
 
     var supremeSlayers: [PFObject]?
     let supremeSlayerCellIdentifier = "SupremeSlayerCell"
@@ -84,5 +86,12 @@ class SupremeSelfieSlayersController: UIViewController, UITableViewDataSource {
             .registerClass(UITableViewCell.self, forCellReuseIdentifier: self.supremeSlayerCellIdentifier)
         tableViewSupremeSlayers.rowHeight = UITableViewAutomaticDimension
         tableViewSupremeSlayers.estimatedRowHeight = 56
-    }   
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let toViewController = segue.destinationViewController as UIViewController
+        self.transitionManager.toLeft = false
+        
+        toViewController.transitioningDelegate = self.transitionManager
+    }
 }

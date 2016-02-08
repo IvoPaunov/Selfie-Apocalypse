@@ -175,25 +175,6 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
         print("long")
     }
     
-    @IBAction func throwGranade(sender: AnyObject) {
-        
-        self.isGameFinished = true
-        for selfie in self.selfies {
-            
-            selfie.layer.removeAllAnimations()
-        }
-        
-        self.backGroundAudioPlayer?.stop()
-        self.backGroundAudioPlayer = nil
-        
-        
-        //        let selfieCOntroller = self.storyboard?
-        //            .instantiateViewControllerWithIdentifier("SetSelfieController") as? SetSelfieController
-        //
-        //        selfieCOntroller?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        //            self.presentViewController(selfieCOntroller!, animated: true, completion: nil)
-    }
-    
     func  drawSelfie(){
         
         if self.isGameFinished {
@@ -281,8 +262,8 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
             self.selfies.remove(selfieToSlay)
             
             if !self.isGameFinished {
-            ++self.selfiesKilledCount
-            self.selfiesKilledLabel.text = String(self.selfiesKilledCount)
+                ++self.selfiesKilledCount
+                self.selfiesKilledLabel.text = String(self.selfiesKilledCount)
             }
         }
     }
@@ -451,12 +432,12 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
     
     func handleGameOver(){
         
-        //        self.loopHandler?.invalidate()
-        //        self.loopHandler = nil
-        //        for selfie in self.selfies{
-        //            self.slaySelfie(selfie)
-        //        }
-        //
+        self.loopHandler?.invalidate()
+        self.loopHandler = nil
+        for selfie in self.selfies{
+            self.slaySelfie(selfie)
+        }
+        
         
         let gameOverController = self.storyboard?
             .instantiateViewControllerWithIdentifier("GameOverController") as? GameOverController
@@ -469,11 +450,11 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
             gameOverController?.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
             self.presentViewController(gameOverController!, animated: true, completion: nil)
             
-            })
+        })
     }
     
     func setupAudioPlayers(){
-    
+        
         self.setBaskgroundAudio()
         
         if let batAudioUrl = NSBundle.mainBundle().URLForResource("bat",
@@ -570,7 +551,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
     func setBaskgroundAudio(){
         self.backGroundAudioPlayer?.stop()
         self.backGroundAudioPlayer = nil
-       
+        
         
         let randomNumber = arc4random_uniform(UInt32(4)) + 1
         
@@ -598,7 +579,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
             options: UIViewAnimationOptions.CurveEaseInOut,
             animations: { () -> Void in
                 
-            flashView.alpha = 0.0
+                flashView.alpha = 0.0
                 
             }, completion: { (done) -> Void in
                 
@@ -609,7 +590,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         
         player.stop()
-       //player.
+        //player.
         
         self.setBaskgroundAudio()
     }
