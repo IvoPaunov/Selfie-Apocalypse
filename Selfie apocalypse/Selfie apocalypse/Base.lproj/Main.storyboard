@@ -29,6 +29,8 @@
             <string>PixelOperator</string>
             <string>PixelOperator</string>
             <string>PixelOperator</string>
+            <string>PixelOperator</string>
+            <string>PixelOperator</string>
         </mutableArray>
         <mutableArray key="PixelOperatorMono8.ttf">
             <string>PixelOperatorMono8</string>
@@ -75,7 +77,7 @@
                         <constraints>
                             <constraint firstItem="J8a-71-JBB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RS6-qV-sQh"/>
                             <constraint firstItem="nA8-1P-Z3e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="S9A-R3-Ts5"/>
-                            <constraint firstItem="J8a-71-JBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="uOK-dQ-HRE"/>
+                            <constraint firstItem="J8a-71-JBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="7" id="uOK-dQ-HRE"/>
                             <constraint firstItem="vDd-95-bEj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="5" id="vJT-je-dj0"/>
                             <constraint firstItem="nA8-1P-Z3e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="wuA-Zu-eyW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vDd-95-bEj" secondAttribute="trailing" constant="-15" id="zCZ-56-Nsn"/>
@@ -339,24 +341,84 @@
                                     <segue destination="yJW-Js-uqE" kind="show" id="LDj-3H-1cx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SELFIE APOCALYPSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvr-F9-SIU">
+                                <rect key="frame" x="20" y="20" width="560" height="45"/>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="30"/>
+                                <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDd-8T-Dcf" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="542" width="560" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="H5i-op-Isa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="16"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="by Ivo Paounov"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledTextColor">
+                                        <color key="value" red="0.93341650310000002" green="0.93341650310000002" blue="0.93341650310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTextColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
+                                        <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBorderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openGithub:" destination="OEp-RS-joS" eventType="touchUpInside" id="5Jh-GA-2Dn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="vDd-8T-Dcf" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="0ul-ef-Gbo"/>
                             <constraint firstItem="9FM-rG-uaZ" firstAttribute="top" secondItem="ZtW-Eq-STd" secondAttribute="bottom" constant="23" id="4WH-Wn-IWE"/>
                             <constraint firstItem="N0W-tx-2j2" firstAttribute="top" secondItem="9FM-rG-uaZ" secondAttribute="bottom" constant="23" id="5ED-F3-xBb"/>
                             <constraint firstItem="YAA-NG-sw6" firstAttribute="trailing" secondItem="gm0-en-cQf" secondAttribute="trailing" id="9De-LD-hqD"/>
                             <constraint firstItem="N0W-tx-2j2" firstAttribute="leading" secondItem="eHo-mU-7Ka" secondAttribute="leading" constant="20" id="CbD-kz-rH4"/>
+                            <constraint firstItem="Gvr-F9-SIU" firstAttribute="top" secondItem="Tvh-fY-cKq" secondAttribute="bottom" constant="20" id="EaM-UL-S6N"/>
                             <constraint firstItem="ZtW-Eq-STd" firstAttribute="trailing" secondItem="9FM-rG-uaZ" secondAttribute="trailing" id="HEM-ZN-2GF"/>
                             <constraint firstItem="gm0-en-cQf" firstAttribute="top" secondItem="YAA-NG-sw6" secondAttribute="bottom" constant="24" id="KHO-3M-MqU"/>
+                            <constraint firstItem="ORr-6m-mkP" firstAttribute="top" secondItem="vDd-8T-Dcf" secondAttribute="bottom" constant="20" id="NOw-Wo-5lU"/>
                             <constraint firstItem="N0W-tx-2j2" firstAttribute="centerY" secondItem="eHo-mU-7Ka" secondAttribute="centerY" id="Pdl-R4-uB1"/>
+                            <constraint firstItem="Gvr-F9-SIU" firstAttribute="leading" secondItem="eHo-mU-7Ka" secondAttribute="leadingMargin" id="Q4E-mO-NqL"/>
                             <constraint firstItem="ZtW-Eq-STd" firstAttribute="leading" secondItem="9FM-rG-uaZ" secondAttribute="leading" id="U2G-Dv-Z06"/>
                             <constraint firstItem="YAA-NG-sw6" firstAttribute="leading" secondItem="N0W-tx-2j2" secondAttribute="leading" id="VKQ-K4-WOB"/>
                             <constraint firstItem="gm0-en-cQf" firstAttribute="leading" secondItem="YAA-NG-sw6" secondAttribute="leading" id="W1C-m2-023"/>
+                            <constraint firstItem="Gvr-F9-SIU" firstAttribute="trailing" secondItem="eHo-mU-7Ka" secondAttribute="trailingMargin" id="X6W-AI-hGI"/>
                             <constraint firstItem="YAA-NG-sw6" firstAttribute="trailing" secondItem="N0W-tx-2j2" secondAttribute="trailing" id="ZTm-35-Byz"/>
+                            <constraint firstItem="vDd-8T-Dcf" firstAttribute="leading" secondItem="eHo-mU-7Ka" secondAttribute="leadingMargin" id="ev8-Dd-YDF"/>
                             <constraint firstItem="9FM-rG-uaZ" firstAttribute="trailing" secondItem="N0W-tx-2j2" secondAttribute="trailing" id="f3T-XI-xGD"/>
                             <constraint firstAttribute="trailing" secondItem="N0W-tx-2j2" secondAttribute="trailing" constant="20" id="fgh-dA-A1f"/>
                             <constraint firstItem="N0W-tx-2j2" firstAttribute="centerX" secondItem="eHo-mU-7Ka" secondAttribute="centerX" id="hTF-J0-hae"/>
                             <constraint firstItem="9FM-rG-uaZ" firstAttribute="leading" secondItem="N0W-tx-2j2" secondAttribute="leading" id="htm-H9-Hth"/>
+                            <constraint firstItem="vDd-8T-Dcf" firstAttribute="trailing" secondItem="eHo-mU-7Ka" secondAttribute="trailingMargin" id="n4V-I8-coh"/>
                             <constraint firstItem="YAA-NG-sw6" firstAttribute="top" secondItem="N0W-tx-2j2" secondAttribute="bottom" constant="25" id="oCJ-J9-jaR"/>
                         </constraints>
                     </view>
@@ -378,16 +440,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qh0-iv-3j7">
-                                <rect key="frame" x="200" y="39" width="200" height="200"/>
+                                <rect key="frame" x="200" y="36" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="MNO-n7-ubl"/>
-                                    <constraint firstAttribute="height" constant="200" id="t1v-6w-rjU"/>
+                                    <constraint firstAttribute="height" constant="200" id="C3Z-25-Obw"/>
+                                    <constraint firstAttribute="width" constant="200" id="e2O-hJ-KK0"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzq-2f-JDB" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="502" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="pwp-PH-xxE"/>
+                                    <constraint firstAttribute="height" constant="30" id="dv9-TU-rCJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -434,7 +496,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM1-U1-8wE" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="452" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5Os-4u-XTv"/>
+                                    <constraint firstAttribute="height" constant="30" id="ad9-H9-vzp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -481,7 +543,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZQ-Kt-vnh" customClass="DCBorderedButton" customModule="Selfie_apocalypse" customModuleProvider="target">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="nI8-mZ-lON"/>
+                                    <constraint firstAttribute="height" constant="30" id="RK4-0I-kRc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -526,10 +588,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daK-Zf-scY">
-                                <rect key="frame" x="20" y="39" width="29" height="48"/>
+                                <rect key="frame" x="20" y="20" width="29" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="29" id="7Xc-WS-OWy"/>
-                                    <constraint firstAttribute="height" constant="48" id="U6A-Zv-GF9"/>
+                                    <constraint firstAttribute="height" constant="48" id="5uc-rl-wxf"/>
+                                    <constraint firstAttribute="width" constant="29" id="O1N-3u-ov0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="48"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
@@ -575,12 +637,12 @@
                                     <segue destination="OEp-RS-joS" kind="show" id="ToZ-6v-UW5"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER SELFIE SLAYER NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-HT-RXc" customClass="DCBorderedTextField" customModule="Selfie_apocalypse" customModuleProvider="target">
-                                <rect key="frame" x="20" y="263" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER SELFIE SLAYER NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-HT-RXc" customClass="DCBorderedTextField" customModule="Selfie_apocalypse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="257" width="560" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="PixelOperator" family="Pixel Operator" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="normalBorderColor">
                                         <color key="value" red="0.87025930330000001" green="1" blue="0.40508379090000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -599,22 +661,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="top" secondItem="daK-Zf-scY" secondAttribute="top" id="1fk-4z-4Zn"/>
-                            <constraint firstAttribute="bottom" secondItem="kZQ-Kt-vnh" secondAttribute="bottom" constant="20" symbolic="YES" id="6iC-Fr-Rzi"/>
-                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="top" secondItem="Wzq-2f-JDB" secondAttribute="bottom" constant="18" id="Cdp-Uv-R9y"/>
-                            <constraint firstItem="PM1-U1-8wE" firstAttribute="trailing" secondItem="Wzq-2f-JDB" secondAttribute="trailing" id="F8x-XY-SCq"/>
-                            <constraint firstItem="daK-Zf-scY" firstAttribute="top" secondItem="j05-AX-5rk" secondAttribute="bottom" constant="19" id="Gqn-Si-672"/>
-                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="trailing" secondItem="Wzq-2f-JDB" secondAttribute="trailing" id="Gt9-yM-jUo"/>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="top" secondItem="Qh0-iv-3j7" secondAttribute="bottom" constant="24" id="IIY-ae-KPk"/>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="leading" secondItem="daK-Zf-scY" secondAttribute="leading" id="OsK-FJ-GGG"/>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="leading" secondItem="8BK-nK-4st" secondAttribute="leadingMargin" id="QRi-DP-1A4"/>
-                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="trailing" secondItem="8BK-nK-4st" secondAttribute="trailingMargin" id="giY-Kz-TLl"/>
-                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="top" secondItem="PM1-U1-8wE" secondAttribute="bottom" constant="20" id="jj4-gh-bsc"/>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="centerX" secondItem="Qh0-iv-3j7" secondAttribute="centerX" id="nfV-DF-R2n"/>
-                            <constraint firstItem="PM1-U1-8wE" firstAttribute="trailing" secondItem="dVI-HT-RXc" secondAttribute="trailing" id="qGv-rJ-EAa"/>
-                            <constraint firstItem="dVI-HT-RXc" firstAttribute="leading" secondItem="PM1-U1-8wE" secondAttribute="leading" id="s2i-1F-ROU"/>
-                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="leading" secondItem="kZQ-Kt-vnh" secondAttribute="leading" id="uIG-EU-hms"/>
-                            <constraint firstItem="PM1-U1-8wE" firstAttribute="leading" secondItem="Wzq-2f-JDB" secondAttribute="leading" id="xUH-A6-zdH"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="trailing" secondItem="PM1-U1-8wE" secondAttribute="trailing" id="0vZ-AR-r8P"/>
+                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="top" secondItem="Wzq-2f-JDB" secondAttribute="bottom" constant="18" id="9ov-Ql-4TS"/>
+                            <constraint firstAttribute="bottom" secondItem="kZQ-Kt-vnh" secondAttribute="bottom" constant="20" symbolic="YES" id="B31-u5-xmg"/>
+                            <constraint firstItem="daK-Zf-scY" firstAttribute="top" secondItem="j05-AX-5rk" secondAttribute="bottom" id="G0p-pi-LVJ"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="leading" secondItem="PM1-U1-8wE" secondAttribute="leading" id="HuN-dL-CHW"/>
+                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="trailing" secondItem="8BK-nK-4st" secondAttribute="trailingMargin" id="Pdp-fd-snO"/>
+                            <constraint firstItem="daK-Zf-scY" firstAttribute="leading" secondItem="8BK-nK-4st" secondAttribute="leadingMargin" id="Wev-bv-Qv5"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="top" secondItem="PM1-U1-8wE" secondAttribute="bottom" constant="20" id="XNc-Za-Kea"/>
+                            <constraint firstItem="daK-Zf-scY" firstAttribute="leading" secondItem="dVI-HT-RXc" secondAttribute="leading" id="adT-dF-hey"/>
+                            <constraint firstItem="kZQ-Kt-vnh" firstAttribute="leading" secondItem="Wzq-2f-JDB" secondAttribute="leading" id="bVy-3i-NzQ"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="top" secondItem="Qh0-iv-3j7" secondAttribute="bottom" constant="21" id="d3f-in-tWZ"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="centerX" secondItem="Qh0-iv-3j7" secondAttribute="centerX" id="du1-lf-fc4"/>
+                            <constraint firstItem="Qh0-iv-3j7" firstAttribute="top" secondItem="j05-AX-5rk" secondAttribute="bottom" constant="16" id="enF-7d-XkF"/>
+                            <constraint firstItem="PM1-U1-8wE" firstAttribute="leading" secondItem="dVI-HT-RXc" secondAttribute="leading" id="fRv-JK-uLv"/>
+                            <constraint firstItem="dVI-HT-RXc" firstAttribute="trailing" secondItem="PM1-U1-8wE" secondAttribute="trailing" id="vt7-Ss-NoD"/>
+                            <constraint firstItem="Wzq-2f-JDB" firstAttribute="trailing" secondItem="kZQ-Kt-vnh" secondAttribute="trailing" id="war-N4-R69"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1136,7 +1198,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MML-UD-2Fh"/>
-        <segue reference="wMG-vR-YSW"/>
+        <segue reference="ToZ-6v-UW5"/>
+        <segue reference="aZ4-Jt-MZx"/>
     </inferredMetricsTieBreakers>
 </document>

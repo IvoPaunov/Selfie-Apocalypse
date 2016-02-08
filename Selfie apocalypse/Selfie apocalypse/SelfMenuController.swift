@@ -23,8 +23,13 @@ class SelfMenuController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func openGithub(sender: AnyObject) {
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://github.com/IvoPaunov")!)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let toViewController = segue.destinationViewController as UIViewController        
+        let toViewController = segue.destinationViewController as UIViewController
         
              toViewController.transitioningDelegate = self.transitionManager
     }
