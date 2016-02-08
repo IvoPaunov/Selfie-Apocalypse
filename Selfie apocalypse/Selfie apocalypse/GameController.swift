@@ -13,7 +13,7 @@ import Foundation
 class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlayerDelegate {
     var utils = Utils()
     
-    var currentSelfieZindex = 1000000000
+    var currentSelfieZindex = 10000000
     var selfiesKilledCount = 0
     var absorbtionsTillDeath = 3
     var granadesLeft = 3
@@ -349,13 +349,13 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
                 
                 self.drawSelfie()
                 
-                if(self.selfiesKilledCount > 0 && self.selfiesKilledCount % 5 == 0){
+                if(self.selfiesKilledCount > 0 && self.selfiesKilledCount % 7 == 0){
                     self.loopHandler?.invalidate()
                     self.loopHandler = nil
                     
-                    if( self.currentSelfieReproductionInterval > 0.5){
+                    if( self.currentSelfieReproductionInterval > 0.7){
                         
-                        self.currentSelfieReproductionInterval -= 0.1
+                        self.currentSelfieReproductionInterval -= 0.07
                         
                     }
                     
