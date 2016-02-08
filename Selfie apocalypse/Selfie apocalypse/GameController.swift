@@ -189,7 +189,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
         selfie.backgroundColor = UIColor.clearColor()
 
         selfie.layer.zPosition = CGFloat(self.currentSelfieZindex)
-        self.currentSelfieZindex -= 1 //Float(((self.selfiesKilledCount + self.selfies.count) * 50) + 2)
+        self.currentSelfieZindex -= 1
         selfie.alpha = 0
         selfie.userInteractionEnabled = true
         self.selfies.insert(selfie)
@@ -324,8 +324,6 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
                 self.isGameFinished = true
                 self.handleGameOver()
             }
-            
-            // TODO: remove selfie and make some signal about that (sound  and animation)
         }
     }
     
@@ -550,7 +548,7 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
         self.backGroundAudioPlayer?.stop()
         self.backGroundAudioPlayer = nil
         
-        let randomNumber = arc4random_uniform(UInt32(4)) + 1
+        let randomNumber = arc4random_uniform(UInt32(5)) + 1
         
         let baskgroundAudio = "background-\(randomNumber)"
         
@@ -590,11 +588,6 @@ class GameController: UIViewController, UIGestureRecognizerDelegate, AVAudioPlay
         //player.
         
         self.setBaskgroundAudio()
-    }
-    
-    //    func gestureRecognizer(_: UIGestureRecognizer,
-    //        shouldRecognizeSimultaneouslyWithGestureRecognizer:UIGestureRecognizer) -> Bool {
-    //            return true
-    //    }
+    } 
 }
 

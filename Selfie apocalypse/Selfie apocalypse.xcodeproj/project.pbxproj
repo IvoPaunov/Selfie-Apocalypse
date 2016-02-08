@@ -49,6 +49,7 @@
 		856F0DA11C6801DB0079E46D /* the-true-story.txt in Resources */ = {isa = PBXBuildFile; fileRef = 856F0DA01C6801DB0079E46D /* the-true-story.txt */; };
 		856F0DA31C6805830079E46D /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0DA21C6805830079E46D /* TransitionManager.swift */; };
 		856F0DA51C6808100079E46D /* SelfMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856F0DA41C6808100079E46D /* SelfMenuController.swift */; };
+		8573000B1C68639C008E94AF /* background-5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8573000A1C68639C008E94AF /* background-5.mp3 */; };
 		85752FD51C62A84C00F38513 /* hearts-sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 85752FD41C62A84C00F38513 /* hearts-sprite.png */; };
 		85791B5E1C61011D0087E258 /* LivesStatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85791B5D1C61011D0087E258 /* LivesStatusBar.xib */; };
 		85791B601C6101790087E258 /* LivesStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85791B5F1C6101790087E258 /* LivesStatusBar.swift */; };
@@ -136,6 +137,7 @@
 		856F0DA01C6801DB0079E46D /* the-true-story.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "the-true-story.txt"; sourceTree = "<group>"; };
 		856F0DA21C6805830079E46D /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		856F0DA41C6808100079E46D /* SelfMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfMenuController.swift; sourceTree = "<group>"; };
+		8573000A1C68639C008E94AF /* background-5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-5.mp3"; sourceTree = "<group>"; };
 		85752FD41C62A84C00F38513 /* hearts-sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hearts-sprite.png"; sourceTree = "<group>"; };
 		85791B5D1C61011D0087E258 /* LivesStatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivesStatusBar.xib; sourceTree = "<group>"; };
 		85791B5F1C6101790087E258 /* LivesStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesStatusBar.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				85D75EF81C66D44D0016CD24 /* background-2.mp3 */,
 				85D75EF91C66D44D0016CD24 /* background-3.mp3 */,
 				85D75EFA1C66D44D0016CD24 /* background-4.mp3 */,
+				8573000A1C68639C008E94AF /* background-5.mp3 */,
 				85D75EF51C66C2990016CD24 /* boom.mp3 */,
 				85D75EF31C66C2210016CD24 /* self-over.mp3 */,
 				85D75EF11C66C21A0016CD24 /* bat.mp3 */,
@@ -564,6 +567,7 @@
 				85D75EF21C66C21A0016CD24 /* bat.mp3 in Resources */,
 				8545B4BC1C609F25008F2624 /* Assets.xcassets in Resources */,
 				856F0D441C67425A0079E46D /* HowToSlayCell.xib in Resources */,
+				8573000B1C68639C008E94AF /* background-5.mp3 in Resources */,
 				856F0D961C67EE0E0079E46D /* selfie-torso-sprite-black.png in Resources */,
 				856F0D571C6790BB0079E46D /* PixelOperatorMono8.ttf in Resources */,
 				8545B4BA1C609F25008F2624 /* Main.storyboard in Resources */,
